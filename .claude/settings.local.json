@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npx tsc:*)",
       "Bash(node -e \"const p = require\\('./package.json'\\); console.log\\(JSON.stringify\\({deps: Object.keys\\(p.dependencies\\)}, null, 2\\)\\)\")",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(node -e \"const p = require\\('./package.json'\\); console.log\\(JSON.stringify\\({nextVersion: p.dependencies.next, nodeEngines: p.engines, scripts: p.scripts}, null, 2\\)\\)\")"
     ]
   }
 }
