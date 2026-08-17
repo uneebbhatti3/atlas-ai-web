@@ -424,7 +424,6 @@ export default function AtlasLanding() {
 
           <ol className="flex flex-col gap-[30px] sm:flex-row sm:gap-3">
             {WORKFLOW.map((step, index) => {
-              const Icon = step.icon;
               const isLast = index === WORKFLOW.length - 1;
               return (
                 <li key={step.num} className="relative flex-1 sm:pr-[18px]">
