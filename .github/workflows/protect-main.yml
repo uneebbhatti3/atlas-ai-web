@@ -1,0 +1,26 @@
+name: Protect Main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  pull-requests: read
+  contents: read
+
+jobs:
+  validate-source:
+    name: Validate Source Branch
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check source branch
+        run: |
+          if [ "${{ github.head_ref }}" != "integration" ]; then
+            echo "Only the integration branch can be merged into main."
+            echo "Source branch: ${{ github.head_ref }}"
+            exit 1
+          fi
+
+          echo "Valid source branch: integration"
