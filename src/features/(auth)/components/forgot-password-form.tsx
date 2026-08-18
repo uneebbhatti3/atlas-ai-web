@@ -27,8 +27,7 @@ export function ForgotPasswordForm({ className, ...props }: React.ComponentProps
                   Send email
                 </Button>
                 <FieldDescription className="text-center">
-                  Remembered it?{" "}
-                  <Link href="/login">Back to sign in</Link>
+                  Remembered it? <Link href="/login">Back to sign in</Link>
                 </FieldDescription>
               </Field>
             </FieldGroup>
