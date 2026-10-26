@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Atlas AI Web
 
-## Getting Started
+The web frontend for **Atlas AI**, a knowledge and research workspace built as a personal
+engineering lab. Users organize knowledge as **Workspace → Project → Documents**, and later
+search it semantically and ask questions answered with citations.
 
-First, run the development server:
+The backend lives in a separate repository, `atlas-ai-api` (NestJS, Better Auth, PostgreSQL).
+
+> This is a learning project, not a commercial product. The backend is written entirely by hand;
+> AI assistance is used for frontend UI only. See [`docs/LabRules.md`](docs/LabRules.md).
+
+## Tech stack
+
+Next.js (App Router) · TypeScript (strict) · Tailwind CSS · shadcn/ui · Lucide · Axios ·
+TanStack Query · Zustand · Framer Motion · ESLint · Prettier · Husky · npm · Vercel
+
+## Documentation
+
+| File                                                       | Purpose                                                           |
+| ---------------------------------------------------------- | ----------------------------------------------------------------- |
+| [`AGENTS.md`](AGENTS.md)                                   | Rules for AI coding agents (Claude Code reads it via `CLAUDE.md`) |
+| [`docs/PRD.md`](docs/PRD.md)                               | What and why: scope, requirements, success criteria               |
+| [`docs/TRD.md`](docs/TRD.md)                               | Tech stack, architecture, API integration, CI/CD                  |
+| [`docs/AppFlow.md`](docs/AppFlow.md)                       | Routes, screens and user journeys                                 |
+| [`docs/Design.md`](docs/Design.md)                         | Design tokens: colors, type, spacing, motion, components          |
+| [`docs/ImplementationPlan.md`](docs/ImplementationPlan.md) | Ordered task checklist by phase                                   |
+| [`docs/PROGRESS.md`](docs/PROGRESS.md)                     | Done, in progress, bugs, decisions                                |
+| [`docs/MEMORY.md`](docs/MEMORY.md)                         | Durable context, conventions and gotchas                          |
+| [`docs/LabRules.md`](docs/LabRules.md)                     | How AI is (and is not) used in this lab                           |
+| [`docs/adr/`](docs/adr)                                    | Architecture decision records                                     |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md)                       | Branches, commits and pull requests                               |
+
+## Bootstrap (first time only)
+
+`create-next-app` refuses to run in a non-empty folder, so generate the app first and then copy
+this scaffold over it.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 1. Generate the app (accept TypeScript, ESLint, Tailwind, App Router, src/, @/* alias, AGENTS.md)
+npx create-next-app@latest atlas-ai-web --use-npm
+cd atlas-ai-web
+
+# 2. Copy every file from this scaffold into the project, overwriting:
+#    eslint.config.mjs, .gitignore. Then merge the generated AGENTS.md:
+#    keep its Next.js managed block at the top, followed by our rules.
+
+# 3. Move the landing page into its route group
+mkdir -p "src/app/(root)" && git mv src/app/page.tsx "src/app/(root)/page.tsx"
+
+# 4. UI and data libraries
+npx shadcn@latest init
+npm install axios @tanstack/react-query zustand motion
+
+# 5. Tooling
+npm install -D prettier prettier-plugin-tailwindcss eslint-config-prettier \
+  husky lint-staged @commitlint/cli @commitlint/config-conventional
+npx husky init   # then restore the hook files from this scaffold
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then add the scripts and strict TypeScript flags from [`docs/TRD.md`](docs/TRD.md) §7, create
+`.env.local` from `.env.example`, and run `npm run dev`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## GitHub and Vercel setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push `main`, then create and push `staging`.
+2. Run `./scripts/setup-github.sh <owner>/atlas-ai-web`. It sets `staging` as the default
+   branch, configures merge methods and applies the rulesets in `.github/rulesets/`.
+3. In Vercel, import the repo, set the production branch to `main`, and add the variables from
+   `.env.example` for Production and Preview.
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Command                                   | What it does                         |
+| ----------------------------------------- | ------------------------------------ |
+| `npm run dev`                             | Start the dev server                 |
+| `npm run build`                           | Production build                     |
+| `npm run lint`                            | ESLint, including architecture rules |
+| `npm run typecheck`                       | TypeScript without emitting          |
+| `npm run format` / `npm run format:check` | Prettier write / check               |
+| `npm run check`                           | Format check + lint + typecheck      |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/            (root) landing · (auth) login/signup · (app) authenticated app
+├── components/     ui/ (shadcn) · common/ (shared composed components)
+├── data/  types/  hooks/  services/  layouts/  lib/  utils/
+├── templates/emails/
+└── features/<feature>/  components · hooks · types · services · utils · helpers · index.ts
+```
 
-## Deploy on Vercel
+Rules for each folder are in [`AGENTS.md`](AGENTS.md) §3–4.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## AI tooling (frontend UI only)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Skills, installed per user so they stay out of the repo:
+
+```bash
+npx skills add dickwu/apple-design-skill -g
+npx skills add https://github.com/anthropics/skills --skill frontend-design -g
+```
+
+MCP servers used in UI work: shadcn, 21st.dev, Context7, Playwright, and optionally Chrome
+DevTools and Figma. API keys stay in your shell environment and are never committed.
+
+## License
+
+To be decided.
