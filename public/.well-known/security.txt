@@ -1,0 +1,5 @@
+# Security contact for Atlas AI (RFC 9116). Renew `Expires` before it passes.
+Contact: https://github.com/uneebbhatti3/atlas-ai-web/security/advisories/new
+Expires: 2027-10-27T00:00:00.000Z
+Policy: https://github.com/uneebbhatti3/atlas-ai-web/blob/main/SECURITY.md
+Preferred-Languages: en
