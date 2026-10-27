@@ -1,0 +1,233 @@
+- generic [ref=f11e1]:
+  - banner [ref=f11e2]:
+    - generic [ref=f11e3]:
+      - link "Atlas AI" [ref=f11e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f11e5]:
+        - button "Switch between light and dark theme" [ref=f11e6]
+        - button "Open menu" [ref=f11e7]
+  - main [ref=f11e8]:
+    - region [ref=f11e9]:
+      - generic [ref=f11e10]:
+        - heading "Your documents, organized into knowledge." [level=1] [ref=f11e11]
+        - paragraph [ref=f11e12]: Atlas AI is an AI knowledge and research workspace, built in public as an open-source engineering lab with a hand-written backend.
+        - generic [ref=f11e13]:
+          - link "View on GitHub" [ref=f11e14] [cursor=pointer]:
+            - /url: https://github.com/uneebbhatti3/atlas-ai-web
+          - link "See the roadmap" [ref=f11e15] [cursor=pointer]:
+            - /url: "#roadmap"
+      - generic [ref=f11e18]:
+        - 'figure "Preview of the Atlas AI workspace: a sidebar of workspaces and projects, an open Markdown document with a highlighted passage, and a planned Ask Atlas panel that answers a question with citations to that passage." [ref=f11e19]':
+          - generic [ref=f11e21]:
+            - generic [ref=f11e22]:
+              - generic [ref=f11e27]: Distributed caching
+              - generic [ref=f11e30]: Preview
+            - generic [ref=f11e32]:
+              - generic [ref=f11e33]:
+                - generic [ref=f11e34]: Markdown
+                - generic [ref=f11e35]: 4 min read
+                - generic [ref=f11e36]: Edited today
+              - paragraph [ref=f11e37]: Cache invalidation
+              - paragraph [ref=f11e38]:
+                - text: A cache is only as good as its invalidation strategy.
+                - mark [ref=f11e39]: Write-through keeps the cache consistent at the cost of slower writes,
+                - text: while TTL-based expiry trades a window of staleness for simplicity. Most systems end up combining both.
+              - paragraph [ref=f11e40]: Strategies compared
+              - list [ref=f11e41]:
+                - listitem [ref=f11e42]: Write-through
+                - listitem [ref=f11e44]: Write-behind
+                - listitem [ref=f11e46]: TTL expiry
+                - listitem [ref=f11e48]: Explicit purge on write
+        - list "How Atlas organizes knowledge" [ref=f11e51]:
+          - listitem [ref=f11e52]:
+            - generic [ref=f11e53]: Workspace
+          - listitem [ref=f11e54]:
+            - generic [ref=f11e57]: Project
+          - listitem [ref=f11e58]:
+            - generic [ref=f11e61]: Documents
+          - listitem [ref=f11e62]:
+            - generic [ref=f11e65]:
+              - text: Knowledge
+              - generic [ref=f11e66]: (planned)
+          - listitem [ref=f11e67]:
+            - generic [ref=f11e70]:
+              - text: AI
+              - generic [ref=f11e71]: (planned)
+    - region [ref=f11e72]:
+      - generic [ref=f11e74]:
+        - heading "How it works" [level=2] [ref=f11e75]
+        - paragraph [ref=f11e76]: One workspace, built up stage by stage. Each tab shows a screen from the roadmap and what is true about it today.
+      - generic [ref=f11e78]:
+        - tablist [ref=f11e79]:
+          - tab "Organize" [ref=f11e80]
+          - tab "Process" [active] [selected] [ref=f11e81]
+          - tab "Search" [ref=f11e82]
+          - tab "Ask" [ref=f11e83]
+        - tabpanel "Process" [ref=f11e84]:
+          - generic [ref=f11e85]:
+            - generic [ref=f11e86]:
+              - generic [ref=f11e87]: Stage 2
+              - generic [ref=f11e88]: Planned
+            - heading "Watch files become knowledge" [level=3] [ref=f11e89]
+            - paragraph [ref=f11e90]: Upload a file and follow it from pending to ready. Failed jobs say why and can be retried, so the backend's work stays visible.
+          - generic [ref=f11e92]:
+            - generic [ref=f11e93]:
+              - generic [ref=f11e98]: Uploads
+              - generic [ref=f11e101]: Preview
+            - generic [ref=f11e102]:
+              - generic [ref=f11e103]:
+                - paragraph [ref=f11e104]: Uploads
+                - paragraph [ref=f11e105]: Each file is processed into searchable text.
+              - list [ref=f11e106]:
+                - listitem [ref=f11e107]:
+                  - generic [ref=f11e111]:
+                    - paragraph [ref=f11e112]: raft-paper.pdf
+                    - paragraph [ref=f11e113]: 1.2 MB
+                  - generic [ref=f11e114]: Ready
+                - listitem [ref=f11e118]:
+                  - generic [ref=f11e122]:
+                    - paragraph [ref=f11e123]: cache-benchmarks.csv
+                    - paragraph [ref=f11e124]: 348 KB
+                  - generic [ref=f11e125]: Processing
+                - listitem [ref=f11e128]:
+                  - generic [ref=f11e132]:
+                    - paragraph [ref=f11e133]: consistency-models.pdf
+                    - paragraph [ref=f11e134]: 2.4 MB
+                  - generic [ref=f11e135]: Pending
+                - listitem [ref=f11e145]:
+                  - generic [ref=f11e149]:
+                    - paragraph [ref=f11e150]: scanned-notes.png
+                    - paragraph [ref=f11e151]: 5.1 MB
+                  - generic [ref=f11e152]: Retry
+                  - generic [ref=f11e153]: Failed
+    - region [ref=f11e156]:
+      - generic [ref=f11e157]:
+        - generic [ref=f11e159]:
+          - heading "Roadmap" [level=2] [ref=f11e160]
+          - paragraph [ref=f11e161]: Atlas grows one stage at a time. The frontend follows the backend, and each stage ships to production standards before the next one starts.
+        - list [ref=f11e162]:
+          - listitem [ref=f11e163]:
+            - generic [ref=f11e165]:
+              - generic [ref=f11e166]:
+                - generic [ref=f11e167]: Stage 1
+                - generic [ref=f11e168]: In progress
+              - heading "Knowledge organization" [level=3] [ref=f11e169]
+              - paragraph [ref=f11e170]: Accounts, workspaces, projects and Markdown documents, with protected routes and account settings.
+          - listitem [ref=f11e171]:
+            - generic [ref=f11e173]:
+              - generic [ref=f11e174]:
+                - generic [ref=f11e175]: Stage 2
+                - generic [ref=f11e176]: Planned
+              - heading "Uploads and processing" [level=3] [ref=f11e177]
+              - paragraph [ref=f11e178]: File uploads with progress, visible processing states and retry for failed jobs.
+          - listitem [ref=f11e179]:
+            - generic [ref=f11e181]:
+              - generic [ref=f11e182]:
+                - generic [ref=f11e183]: Stage 3
+                - generic [ref=f11e184]: Planned
+              - heading "Search" [level=3] [ref=f11e185]
+              - paragraph [ref=f11e186]: Full-text and semantic search, with every result attributed to its source.
+          - listitem [ref=f11e187]:
+            - generic [ref=f11e189]:
+              - generic [ref=f11e190]:
+                - generic [ref=f11e191]: Stage 4
+                - generic [ref=f11e192]: Planned
+              - heading "AI conversations" [level=3] [ref=f11e193]
+              - paragraph [ref=f11e194]: Streamed answers with citations, grounded in your own documents.
+          - listitem [ref=f11e195]:
+            - generic [ref=f11e197]:
+              - generic [ref=f11e198]:
+                - generic [ref=f11e199]: Stage 5 and beyond
+                - generic [ref=f11e200]: Planned
+              - heading "Research, agents and more" [level=3] [ref=f11e201]
+              - paragraph [ref=f11e202]: Research reports, agents, collaboration, notifications, usage dashboards and a mobile app.
+    - region [ref=f11e203]:
+      - generic [ref=f11e204]:
+        - generic [ref=f11e205]:
+          - generic [ref=f11e206]:
+            - heading "Built to learn, in public" [level=2] [ref=f11e207]
+            - paragraph [ref=f11e208]: Atlas AI is a personal engineering lab, not a startup. It exists to learn backend engineering, system design, retrieval-augmented generation and infrastructure in depth, by building a real product to production standards.
+          - paragraph [ref=f11e209]: The NestJS backend is written by hand. AI helps build the interface; the API, the data model and the architecture are designed and written without it.
+        - generic [ref=f11e210]:
+          - generic [ref=f11e211]:
+            - heading "Frontend" [level=3] [ref=f11e212]
+            - list [ref=f11e213]:
+              - listitem [ref=f11e214]:
+                - generic [ref=f11e215]: Next.js
+              - listitem [ref=f11e216]:
+                - generic [ref=f11e217]: React
+              - listitem [ref=f11e218]:
+                - generic [ref=f11e219]: TypeScript
+              - listitem [ref=f11e220]:
+                - generic [ref=f11e221]: Tailwind CSS
+              - listitem [ref=f11e222]:
+                - generic [ref=f11e223]: shadcn/ui
+              - listitem [ref=f11e224]:
+                - generic [ref=f11e225]: TanStack Query
+              - listitem [ref=f11e226]:
+                - generic [ref=f11e227]: Zustand
+          - generic [ref=f11e228]:
+            - heading "Backend" [level=3] [ref=f11e229]
+            - list [ref=f11e230]:
+              - listitem [ref=f11e231]:
+                - generic [ref=f11e232]: NestJS
+              - listitem [ref=f11e233]:
+                - generic [ref=f11e234]: Better Auth
+              - listitem [ref=f11e235]:
+                - generic [ref=f11e236]: PostgreSQL
+          - generic [ref=f11e237]:
+            - heading "Platform" [level=3] [ref=f11e238]
+            - list [ref=f11e239]:
+              - listitem [ref=f11e240]:
+                - generic [ref=f11e241]: Vercel
+              - listitem [ref=f11e242]:
+                - generic [ref=f11e243]: GitHub Actions
+      - generic [ref=f11e245]:
+        - generic [ref=f11e246]:
+          - heading "Decision log" [level=3] [ref=f11e248]
+          - paragraph [ref=f11e249]: Every significant decision is recorded as an Architecture Decision Record, so the reasoning is as public as the code.
+        - list [ref=f11e251]:
+          - listitem [ref=f11e252]:
+            - generic [ref=f11e253]:
+              - generic [ref=f11e254]: ADR-0003
+              - time [ref=f11e255]: 2026-10-26
+            - paragraph [ref=f11e256]: Branching model and merge protection
+            - paragraph [ref=f11e257]: Feature branches go through staging; nobody pushes to main directly.
+          - listitem [ref=f11e258]:
+            - generic [ref=f11e259]:
+              - generic [ref=f11e260]: ADR-0002
+              - time [ref=f11e261]: 2026-10-26
+            - paragraph [ref=f11e262]: No Docker image for the frontend
+            - paragraph [ref=f11e263]: Vercel builds from Git, so a frontend image would be unused work.
+          - listitem [ref=f11e264]:
+            - generic [ref=f11e265]:
+              - generic [ref=f11e266]: ADR-0001
+              - time [ref=f11e267]: 2026-10-26
+            - paragraph [ref=f11e268]: Frontend stack and repository layout
+            - paragraph [ref=f11e269]: Next.js, shadcn/ui and TanStack Query, in a repo separate from the API.
+    - region [ref=f11e270]:
+      - generic [ref=f11e273]:
+        - heading "Follow the build" [level=2] [ref=f11e274]
+        - paragraph [ref=f11e275]: The code, the decisions and the mistakes are all public. Star the repository to follow along, or connect on LinkedIn for progress updates.
+        - generic [ref=f11e276]:
+          - link "Star on GitHub" [ref=f11e277] [cursor=pointer]:
+            - /url: https://github.com/uneebbhatti3/atlas-ai-web
+          - link "Follow on LinkedIn" [ref=f11e278] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/uneeb-bhatti/
+  - contentinfo [ref=f11e279]:
+    - generic [ref=f11e280]:
+      - separator [ref=f11e281]
+      - generic [ref=f11e282]:
+        - generic [ref=f11e283]:
+          - link "Atlas AI" [ref=f11e284] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f11e285]:
+            - text: © 2026 Atlas AI.
+            - link "Built by Uneeb Bhatti" [ref=f11e286] [cursor=pointer]:
+              - /url: https://uneebbhatti.vercel.app/
+        - navigation "Footer" [ref=f11e287]:
+          - link "GitHub" [ref=f11e288] [cursor=pointer]:
+            - /url: https://github.com/uneebbhatti3/atlas-ai-web
+          - link "LinkedIn" [ref=f11e289] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/uneeb-bhatti/
+  - alert [ref=f11e290]
