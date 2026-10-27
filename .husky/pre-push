@@ -2,7 +2,7 @@
 branch="$(git rev-parse --abbrev-ref HEAD)"
 
 case "$branch" in
-  main|staging)
+  main|integration)
     echo "✗ Direct pushes to '$branch' are not allowed. Push a feature/* branch and open a PR."
     exit 1
     ;;

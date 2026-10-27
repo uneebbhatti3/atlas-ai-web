@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
   },
-  // Only the production deployment may be indexed; local, preview and staging builds never are.
+  // Only the production deployment may be indexed; local, preview and integration builds never are.
   robots: isProduction
     ? { index: true, follow: true, googleBot: { index: true, follow: true } }
     : { index: false, follow: false, googleBot: { index: false, follow: false } },

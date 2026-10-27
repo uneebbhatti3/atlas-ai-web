@@ -25,7 +25,7 @@
 | Git hooks       | Husky + lint-staged + commitlint             |                                                                           |
 | Package manager | npm                                          | Commit `package-lock.json`; CI installs with `npm ci`.                    |
 | Node.js         | 24 LTS (`.nvmrc`)                            |                                                                           |
-| Hosting         | Vercel                                       | `main` → production, `staging` → staging preview, PRs → previews.         |
+| Hosting         | Vercel                                       | `main` → production, `integration` → integration preview, PRs → previews. |
 | Tests           | None for the frontend                        | Recorded decision; revisit after v0.1.                                    |
 
 ### Recommended additions (not yet approved)
@@ -199,23 +199,23 @@ See `CONTRIBUTING.md` for the day-to-day workflow and `adr/0003-branching-model.
 reasoning.
 
 ```
-feature/*  ──PR (squash)──►  staging  ──PR (merge commit)──►  main
-                               │                                 │
-                        Vercel staging                    Vercel production
+feature/*  ──PR (squash)──►  integration  ──PR (merge commit)──►  main
+                                  │                                  │
+                         Vercel integration               Vercel production
 ```
 
-| Guard                                                            | Where                                                 |
-| ---------------------------------------------------------------- | ----------------------------------------------------- |
-| No direct pushes to `main`/`staging`, no force-push, no deletion | GitHub rulesets (`.github/rulesets/`)                 |
-| PR required, conversations resolved                              | GitHub rulesets                                       |
-| Format, lint, typecheck and build must pass                      | `ci.yml` → required check **Quality checks**          |
-| PRs into `main` must come from `staging`                         | `branch-flow.yml` → required check **Branch flow**    |
-| PR titles follow Conventional Commits                            | `branch-flow.yml` → required check **PR title**       |
-| Local safety net                                                 | Husky `pre-push` blocks pushing to protected branches |
+| Guard                                                                | Where                                                 |
+| -------------------------------------------------------------------- | ----------------------------------------------------- |
+| No direct pushes to `main`/`integration`, no force-push, no deletion | GitHub rulesets (`.github/rulesets/`)                 |
+| PR required, conversations resolved                                  | GitHub rulesets                                       |
+| Format, lint, typecheck and build must pass                          | `ci.yml` → required check **Quality checks**          |
+| PRs into `main` must come from `integration`                         | `branch-flow.yml` → required check **Branch flow**    |
+| PR titles follow Conventional Commits                                | `branch-flow.yml` → required check **PR title**       |
+| Local safety net                                                     | Husky `pre-push` blocks pushing to protected branches |
 
-Merge methods matter: feature PRs are **squashed** into `staging` (clean history), but
-`staging` is merged into `main` with a **merge commit**. Squashing `staging` into `main` would
-give `main` commits that `staging` does not have, and the branches would drift apart.
+Merge methods matter: feature PRs are **squashed** into `integration` (clean history), but
+`integration` is merged into `main` with a **merge commit**. Squashing `integration` into `main` would
+give `main` commits that `integration` does not have, and the branches would drift apart.
 
 Docker is intentionally not used for the frontend (see `adr/0002-no-docker-for-frontend.md`).
 

@@ -17,7 +17,7 @@ Rules for this file:
 - Frontend only. Backend lives in `atlas-ai-api` (NestJS, Better Auth, PostgreSQL), written by hand.
 - Never design database schemas or backend endpoints from this repo.
 - Package manager is npm (commit `package-lock.json`; CI uses `npm ci`). Node version is in `.nvmrc`.
-- Hosting: Vercel. `main` = production, `staging` = staging, PRs = previews. No Docker.
+- Hosting: Vercel. `main` = production, `integration` = integration preview, PRs = previews. No Docker.
 - shadcn style is `base-vega` (Base UI, not Radix): no `asChild`; composition uses the `render` prop.
 - `next.config.ts` has `cacheComponents` and `partialPrefetching` on. Env lives in `.env.local` (gitignored) and is read only via `lib/env.ts`; it throws at startup if `NEXT_PUBLIC_APP_URL` or `NEXT_PUBLIC_API_URL` is missing.
 - Robots meta is `index, follow` only when `VERCEL_ENV === "production"`.
@@ -82,6 +82,7 @@ _Things that broke or surprised you, and the fix. Format: `YYYY-MM-DD — proble
 - 2026-10-27 — An inline highlight background is taller than a tight line-height and painted over the line above, clipping descenders → `relative -z-10` on the highlight and `isolate` on the heading.
 - 2026-10-27 — shadcn `TabsList` sets `group-data-horizontal/tabs:h-9`, which beats a plain `h-auto`; wrapped tab rows then overlap the panel → add `group-data-horizontal/tabs:h-auto`.
 - 2026-10-27 — Playwright sometimes returns a blank frame right after a long scroll or reload → re-take the screenshot before concluding the page is broken.
+- 2026-10-27 — CI failed with `Cannot find name LayoutProps`: route types (`LayoutProps`, `PageProps`) are generated into `.next/types` by `next dev`/`next build`, and CI typechecks before building on a clean checkout → `typecheck` script is `next typegen && tsc --noEmit`. Locally it passed only because `.next` already existed.
 - 2026-10-26 — Base UI tabs use manual activation: arrow keys move focus, Enter/Space selects. Expected ARIA behaviour, not a bug.
 - 2026-10-26 — `next dev` was killed for low system memory (~1.6 GB free) → verify with `next build` + `next start` (lighter) and stop it afterwards.
 

@@ -207,7 +207,7 @@ Update **both** `docs/PROGRESS.md` and `docs/MEMORY.md` before starting the next
 
 ## 8. Git rules for agents
 
-- Never commit to, push to or merge into `main` or `staging`.
+- Never commit to, push to or merge into `main` or `integration`.
 - Work on the current `feature/*`, `fix/*`, `chore/*`, `docs/*` or `refactor/*` branch.
 - Do not push, open pull requests or merge unless the owner asks in the current request.
 - Commit messages follow Conventional Commits (`feat(workspaces): add empty state`).

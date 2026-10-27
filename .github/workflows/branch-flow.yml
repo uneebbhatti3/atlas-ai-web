@@ -2,7 +2,7 @@ name: Branch flow
 
 on:
   pull_request:
-    branches: [staging, main]
+    branches: [integration, main]
     types: [opened, edited, synchronize, reopened]
 
 permissions:
@@ -22,22 +22,22 @@ jobs:
         run: |
           echo "PR: $HEAD_REF -> $BASE_REF"
           if [ "$BASE_REF" = "main" ]; then
-            if [ "$HEAD_REF" != "staging" ]; then
-              echo "::error::Only 'staging' may be merged into 'main'. Open your PR against 'staging' instead."
+            if [ "$HEAD_REF" != "integration" ]; then
+              echo "::error::Only 'integration' may be merged into 'main'. Open your PR against 'integration' instead."
               exit 1
             fi
-          elif [ "$BASE_REF" = "staging" ]; then
+          elif [ "$BASE_REF" = "integration" ]; then
             if ! echo "$HEAD_REF" | grep -Eq '^(feature|fix|chore|docs|refactor|dependabot)/'; then
-              echo "::error::Branches merged into 'staging' must start with feature/, fix/, chore/, docs/ or refactor/."
+              echo "::error::Branches merged into 'integration' must start with feature/, fix/, chore/, docs/ or refactor/."
               exit 1
             fi
           fi
           echo "Branch flow OK."
 
   pr-title:
-    # Squash merges into staging use the PR title as the commit message.
+    # Squash merges into integration use the PR title as the commit message.
     name: PR title
-    if: github.base_ref == 'staging'
+    if: github.base_ref == 'integration'
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:

@@ -18,12 +18,12 @@ Legend: 🧑 = owner writes by hand · 🤖 = AI may build (UI) · 🔗 = needs 
 - [ ] Install dependencies: shadcn/ui init, axios, @tanstack/react-query, zustand, motion
 - [ ] Install dev tooling: prettier + tailwind plugin, husky, lint-staged, commitlint, eslint-config-prettier
 - [ ] Replace `eslint.config.mjs` with the provided version; fix any violations
-- [ ] Create `staging` branch; run `scripts/setup-github.sh` (rulesets, default branch, merge settings)
+- [ ] Create `integration` branch; run `scripts/setup-github.sh` (rulesets, default branch, merge settings)
 - [ ] Connect Vercel: production branch `main`, environment variables per environment
 - [ ] Install MCP servers and skills (`README.md` → AI tooling)
 
-**Done when:** a throwaway `feature/test` PR into `staging` runs CI, merges by squash, deploys a
-staging preview; a `staging → main` PR deploys production; a direct push to `main` is rejected.
+**Done when:** a throwaway `feature/test` PR into `integration` runs CI, merges by squash, deploys an
+integration preview; a `integration → main` PR deploys production; a direct push to `main` is rejected.
 
 ## Phase 1: Foundations
 
