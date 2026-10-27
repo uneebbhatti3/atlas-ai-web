@@ -12,7 +12,7 @@
 
 ## Checklist
 
-- [ ] Branch flow is right (`feature/*` → `staging`, or `staging` → `main` for a release)
+- [ ] Branch flow is right (`feature/*` → `integration`, or `integration` → `main` for a release)
 - [ ] `npm run check` and `npm run build` pass locally
 - [ ] Loading, empty and error states handled (data-driven UI)
 - [ ] Keyboard and focus checked (UI)

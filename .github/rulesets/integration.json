@@ -1,11 +1,11 @@
 {
-  "name": "Protect staging (integration)",
+  "name": "Protect integration",
   "target": "branch",
   "enforcement": "active",
   "bypass_actors": [],
   "conditions": {
     "ref_name": {
-      "include": ["refs/heads/staging"],
+      "include": ["refs/heads/integration"],
       "exclude": []
     }
   },

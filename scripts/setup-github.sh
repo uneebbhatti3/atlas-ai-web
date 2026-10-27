@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # One-time GitHub setup for atlas-ai-web.
 # Requires: GitHub CLI (`gh auth login`) with admin rights on the repo,
-# and a `staging` branch already pushed.
+# and an `integration` branch already pushed.
 #
 # Usage: ./scripts/setup-github.sh <owner>/<repo>
 #   e.g. ./scripts/setup-github.sh your-username/atlas-ai-web
@@ -10,13 +10,13 @@ set -euo pipefail
 REPO="${1:?Usage: $0 <owner>/<repo>}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
-echo "→ Checking that 'staging' exists on $REPO"
-gh api "repos/$REPO/branches/staging" --silent \
-  || { echo "✗ Push a 'staging' branch first: git switch -c staging && git push -u origin staging"; exit 1; }
+echo "→ Checking that 'integration' exists on $REPO"
+gh api "repos/$REPO/branches/integration" --silent \
+  || { echo "✗ Push an 'integration' branch first: git switch -c integration && git push -u origin integration"; exit 1; }
 
 echo "→ Repository settings: default branch, merge methods, branch cleanup"
 gh api -X PATCH "repos/$REPO" \
-  -f default_branch=staging \
+  -f default_branch=integration \
   -F allow_squash_merge=true \
   -F allow_merge_commit=true \
   -F allow_rebase_merge=false \
@@ -41,7 +41,7 @@ apply_ruleset() {
   fi
 }
 
-apply_ruleset "$ROOT/.github/rulesets/staging.json"
+apply_ruleset "$ROOT/.github/rulesets/integration.json"
 apply_ruleset "$ROOT/.github/rulesets/main.json"
 
 echo "✓ Done. Verify under Settings → Rules → Rulesets."

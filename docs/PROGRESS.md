@@ -75,7 +75,7 @@ Short log. Anything with real trade-offs gets a full ADR in `docs/adr/`.
 | 2026-10-26 | shadcn first: no custom primitives, style via `className`, never edit `ui/`                                                                | AGENTS.md §6          |
 | 2026-10-26 | Separate repos: `atlas-ai-web` and `atlas-ai-api`                                                                                          | ADR-0001              |
 | 2026-10-26 | No Docker for the frontend; Vercel builds from Git                                                                                         | ADR-0002              |
-| 2026-10-26 | `feature/*` → `staging` (squash) → `main` (merge commit), enforced by rulesets                                                             | ADR-0003              |
+| 2026-10-26 | `feature/*` → `integration` (squash) → `main` (merge commit), enforced by rulesets                                                         | ADR-0003              |
 | 2026-10-26 | No frontend automated tests for v0.1                                                                                                       | ADR-0001              |
 | 2026-10-26 | AI builds UI by default; services, hooks and auth only when explicitly asked                                                               | AGENTS.md §2          |
 
