@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import { ClarityScript } from "@/components/common/clarity-script";
 import { siteConfig } from "@/data/site";
 import { env, isProduction } from "@/lib/env";
 import { cn } from "@/lib/utils";
@@ -83,7 +85,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           disableTransitionOnChange
         >
           {children}
+          <SpeedInsights />
         </ThemeProvider>
+        <ClarityScript />
       </body>
     </html>
   );

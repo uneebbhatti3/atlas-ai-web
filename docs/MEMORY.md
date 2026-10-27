@@ -21,6 +21,7 @@ Rules for this file:
 - shadcn style is `base-vega` (Base UI, not Radix): no `asChild`; composition uses the `render` prop.
 - `next.config.ts` has `cacheComponents` and `partialPrefetching` on. Env lives in `.env.local` (gitignored) and is read only via `lib/env.ts`; it throws at startup if `NEXT_PUBLIC_APP_URL` or `NEXT_PUBLIC_API_URL` is missing.
 - Robots meta is `index, follow` only when `VERCEL_ENV === "production"`.
+- Microsoft Clarity loads from `components/common/clarity-script.tsx` via `next/script`, only in production and only when `NEXT_PUBLIC_CLARITY_PROJECT_ID` is set (optional, so missing it never breaks a build).
 
 ## Conventions established
 
