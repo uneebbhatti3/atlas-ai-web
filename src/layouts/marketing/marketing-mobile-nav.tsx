@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
-// The sheet pulls in Base UI's dialog (~33 KB), which most visitors never open. It is split into
+// The dropdown panel pulls in Base UI's dialog (~33 KB), which most visitors never open. It is split into
 // its own chunk and fetched on first intent (hover, focus or press), so it is usually ready by
 // the time the click lands. `ssr: false` is fine: a closed sheet renders nothing.
 const MarketingMobileSheet = dynamic(

@@ -40,10 +40,11 @@ export function HeroSection() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants(),
-              "h-14 w-full gap-3 rounded-full pr-6 pl-2 text-base shadow-lg sm:w-auto",
+              "relative h-14 w-full gap-3 rounded-full pr-6 pl-15 text-base shadow-lg sm:w-auto",
             )}
           >
-            <span className="flex size-10 items-center justify-center rounded-full bg-brand text-brand-foreground">
+            {/* Pinned to the left edge so the label stays centred when the button is full width. */}
+            <span className="absolute top-1/2 left-2 flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-brand text-brand-foreground">
               <StarIcon aria-hidden className="size-4" strokeWidth={2} />
             </span>
             {primaryCta.label}
