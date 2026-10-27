@@ -18,7 +18,7 @@ export function MarketingFooter() {
           <p className="text-center font-heading text-wordmark text-foreground select-none">
             {siteConfig.name}
           </p>
-          <LogoMark className="-mt-8 size-24 rounded-3xl shadow-2xl shadow-brand/50 md:-mt-16 md:size-36 md:rounded-4xl" />
+          <LogoMark className="-mt-8 size-24 md:-mt-16 md:size-36 md:rounded-4xl" />
         </div>
 
         <div className="grid gap-10 md:grid-cols-5">
