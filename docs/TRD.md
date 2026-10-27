@@ -226,7 +226,7 @@ Docker is intentionally not used for the frontend (see `adr/0002-no-docker-for-f
 | LCP (landing, mobile, 4G) | < 2.5 s                                         |
 | CLS                       | < 0.1                                           |
 | INP                       | < 200 ms                                        |
-| First-load JS on landing  | < 150 KB gzip                                   |
+| First-load JS on landing  | ~200 KB gzip (framework baseline ~173 KB)       |
 | Lighthouse accessibility  | ≥ 95                                            |
 | Text contrast             | WCAG 2.2 AA (4.5:1 body, 3:1 large text and UI) |
 

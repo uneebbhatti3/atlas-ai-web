@@ -1,0 +1,12 @@
+[    1083ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:719
+[    1264ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:719
+[   49557ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/hmr?id=2BUeSb0-py287TutfuCgK' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js:16398
+[   50562ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/hmr?id=2BUeSb0-py287TutfuCgK' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js:16398
+[   51576ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/hmr?id=2BUeSb0-py287TutfuCgK' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js:16398
+[   52580ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/hmr?id=2BUeSb0-py287TutfuCgK' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js:16398
+[   53583ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/hmr?id=2BUeSb0-py287TutfuCgK' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js:16398
+[   62387ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:719
+[   72277ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:719
+[   72363ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:719
+[   72879ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:719
+[   73260ms] [LOG] [Fast Refresh] done in 481ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:719

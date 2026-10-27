@@ -97,7 +97,6 @@ Rules for each folder are in [`AGENTS.md`](AGENTS.md) §3–4.
 Skills, installed per user so they stay out of the repo:
 
 ```bash
-npx skills add dickwu/apple-design-skill -g
 npx skills add https://github.com/anthropics/skills --skill frontend-design -g
 ```
 

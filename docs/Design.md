@@ -1,8 +1,8 @@
 # Design System: Atlas AI Web
 
-Apple-inspired: clean, minimal and modern, with generous whitespace, bold type, subtle blur and
-soft motion. This file holds the **exact values**. Components must use these tokens, never
-hardcoded values.
+Restrained, clean, minimal and modern, with generous whitespace, bold type, subtle blur and
+soft motion, in black and white (§2). This file holds the **exact values**. Components must use
+these tokens, never hardcoded values.
 
 ## 1. Principles
 
@@ -13,58 +13,90 @@ hardcoded values.
 4. **Motion explains, never performs.** Animate state changes and spatial relationships only.
 5. **Accessible by default.** Contrast, focus and target size are not polish; they ship on day one.
 
-Note: the apple-design skill is written for native platforms. On the web, apply its principles
-but keep web conventions (top navigation, links that look like links, no iOS tab bar on desktop).
+Keep web conventions: top navigation, links that look like links, no mobile tab bar on desktop.
 
 ## 2. Color tokens
 
-Defined as CSS variables in `src/app/globals.css` and mapped to Tailwind theme names
-(shadcn/ui conventions). Values are hex for readability; convert to OKLCH in CSS if preferred.
+Defined as CSS variables in `src/app/globals.css` and mapped to Tailwind theme names. Neutrals are
+the **shadcn/ui default neutral theme** with black set to `#0A0A0A`; on top sits **one brand
+hue**: violet for brand moments and lavender for panels and the headline highlight block. The
+direction comes from shipanysaas.com (owner request, 2026-10-27). Hex values are rendered sRGB.
 
-| Token                  | Light                    | Dark                  | Use                                                         |
-| ---------------------- | ------------------------ | --------------------- | ----------------------------------------------------------- |
-| `--background`         | `#FBFBFD`                | `#000000`             | Page background                                             |
-| `--surface`            | `#FFFFFF`                | `#1C1C1E`             | Cards, panels                                               |
-| `--surface-secondary`  | `#F5F5F7`                | `#2C2C2E`             | Sidebars, inset areas, hover                                |
-| `--foreground`         | `#1D1D1F`                | `#F5F5F7`             | Primary text                                                |
-| `--muted-foreground`   | `#6E6E73`                | `#A1A1A6`             | Secondary text, captions                                    |
-| `--border`             | `#D2D2D7`                | `#38383A`             | Decorative hairlines, card edges, dividers                  |
-| `--input`              | `#86868B`                | `#7C7C80`             | Input, checkbox and switch outlines (3:1 for UI components) |
-| `--primary`            | `#0071E3`                | `#2997FF`             | Primary buttons, links, focus                               |
-| `--primary-foreground` | `#FFFFFF`                | `#000000`             | Text on primary                                             |
-| `--destructive`        | `#D70015`                | `#FF453A`             | Delete, errors                                              |
-| `--success`            | `#1D7F3A`                | `#30D158`             | Success text and icons                                      |
-| `--warning`            | `#B25000`                | `#FF9F0A`             | Warnings                                                    |
-| `--ring`               | `#0071E3`                | `#2997FF`             | Focus ring                                                  |
-| `--glass`              | `rgba(255,255,255,0.72)` | `rgba(22,22,23,0.72)` | Translucent bars                                            |
+| Token                                  | Light                             | Dark                           | Use                                       |
+| -------------------------------------- | --------------------------------- | ------------------------------ | ----------------------------------------- |
+| `--background`                         | `#FFFFFF`                         | `#0A0A0A`                      | Page background                           |
+| `--foreground`                         | `#0A0A0A`                         | `#FAFAFA`                      | Primary text                              |
+| `--card` / `--popover` (`--surface`)   | `#FFFFFF`                         | `#171717`                      | Cards, popovers                           |
+| `--secondary` / `--muted` / `--accent` | `#F5F5F5`                         | `#262626`                      | Secondary fills, hover, pill tabs         |
+| `--muted-foreground`                   | `#636363` (oklch 0.5)             | `#A1A1A1`                      | Secondary text, captions                  |
+| `--primary`                            | `#0A0A0A`                         | `#E5E5E5`                      | Primary buttons (dark pills)              |
+| `--primary-foreground`                 | `#FAFAFA`                         | `#0A0A0A`                      | Text on primary                           |
+| `--brand`                              | `#6355FF` (oklch 0.569 0.241 279) | `#8A8FFF` (oklch 0.7 0.17 279) | Logo, chat bubbles, citation chips, ticks |
+| `--brand-foreground`                   | `#FFFFFF`                         | `#0A0A0A`                      | Text and icons on brand                   |
+| `--brand-soft`                         | `#EEEEF9`                         | `#23233E`                      | Lavender panels, headline highlight       |
+| `--border`                             | `#E5E5E5`                         | white at 10%                   | Decorative hairlines, card edges          |
+| `--input`                              | `#E5E5E5`                         | white at 15%                   | Form control outlines                     |
+| `--ring`                               | brand                             | brand                          | Focus ring (shadcn applies it at 50%)     |
+| `--destructive`                        | oklch(0.577 0.245 27)             | oklch(0.704 0.191 22)          | Errors only                               |
+| `--glass`                              | `rgba(255,255,255,0.8)`           | `rgba(10,10,10,0.8)`           | Translucent header                        |
 
-Contrast notes:
+`--surface` / `--surface-secondary` alias `--card` / `--muted`. Chart and sidebar tokens are
+shadcn defaults and unused on the landing page.
 
-- Apple's familiar bright green (`#34C759`) and orange (`#FF9500`) **fail** WCAG AA as text on
-  white. The light-theme values above are darkened so status text passes 4.5:1.
-- `--muted-foreground` on `--background` passes AA for body text in both themes (4.9:1 light);
-  do not go lighter.
-- `--border` is decorative and too faint (1.5:1) to be the only boundary of an interactive
-  control. Inputs, checkboxes and switches use `--input`, which meets the 3:1 rule for UI
-  components.
-- Primary blue on white is 4.7:1, so it is valid for link text and white-on-blue buttons.
+Rules:
+
+- **Buttons stay near-black.** The main call to action is a dark pill with a violet icon tile.
+  Violet is for brand moments (logo, user chat bubbles, citations, ticks), never a whole button.
+- **One highlighted phrase per headline**, on a lavender block (`Highlight`). On a lavender panel
+  the block switches to white (`tone="card"`). The heading must be `isolate` so the block sits
+  behind the text and never clips descenders of the line above.
+- **Never violet text on lavender** (4.27:1). Large headline text on lavender is foreground.
+- **Status without colour.** "Available" = solid, "In progress" = secondary fill, "Coming soon" =
+  outline. Nothing on the landing page is "Available" until it ships.
+- `--destructive` is the only other hue, reserved for errors.
+- Dark mode follows the system setting through `next-themes`, which sets the `.dark` class.
+
+Contrast (WCAG 2.2 AA; checked 2026-10-27):
+
+| Pair                                                | Ratio              | Needs | Result                           |
+| --------------------------------------------------- | ------------------ | ----- | -------------------------------- |
+| Text on background / card / muted / lavender        | 14.6–19.8          | 4.5   | Pass                             |
+| Muted text on background / muted / lavender (light) | 6.00 / 5.50 / 5.20 | 4.5   | Pass                             |
+| Muted text on dark surfaces and dark lavender       | 5.83–7.63          | 4.5   | Pass                             |
+| Violet text on background (light / dark)            | 4.92 / 7.04        | 4.5   | Pass                             |
+| Text on violet (light white / dark `#0A0A0A`)       | 4.92 / 7.04        | 4.5   | Pass                             |
+| Violet text on lavender (light)                     | **4.27**           | 4.5   | **Avoid**: large text only       |
+| Focus ring as applied, `ring/50` (light / dark)     | **2.09 / 2.52**    | 3     | **Fail** (was 1.54 / 1.87)       |
+| `--input` outline (light / dark)                    | **1.26 / 1.47**    | 3     | **Fail** for real form fields    |
+| `--border` (decorative only)                        | 1.25–1.26          | n/a   | Never the only edge of a control |
+
+The ring opacity is set inside the shadcn components, so a fully passing focus ring needs either
+an edited `ui/` file or a solid ring class on each control; fix before the first form ships,
+together with a 3:1 `--input` grey.
 
 ## 3. Typography
 
-| Role           | Font           | Weight | Size / line height          | Tracking |
-| -------------- | -------------- | ------ | --------------------------- | -------- |
-| Display (hero) | Inter Tight    | 700    | 56/60 desktop, 40/44 mobile | -0.03em  |
-| H1             | Inter Tight    | 700    | 40/44 desktop, 32/36 mobile | -0.025em |
-| H2             | Inter Tight    | 600    | 28/34                       | -0.02em  |
-| H3             | Inter          | 600    | 21/28                       | -0.01em  |
-| Body large     | Inter          | 400    | 19/30                       | 0        |
-| Body           | Inter          | 400    | 16/24                       | 0        |
-| Small          | Inter          | 400    | 14/20                       | 0        |
-| Caption        | Inter          | 500    | 12/16                       | 0.01em   |
-| Mono           | JetBrains Mono | 400    | 14/22                       | 0        |
+One family: **Plus Jakarta Sans** (`--font-jakarta`, weights 400/500/600/800) for headings and
+body, loaded with `next/font`; JetBrains Mono for code and file names.
+
+| Role          | Weight | Size / line height                      | Tracking |
+| ------------- | ------ | --------------------------------------- | -------- |
+| Wordmark      | 800    | clamp(64px, 17vw, 208px) / 0.9 (footer) | -0.05em  |
+| Display large | 800    | 88/88 (landing hero, `lg`+)             | -0.035em |
+| Display       | 800    | 64/68 section headings, `md`+           | -0.035em |
+| Display small | 800    | 40/44 mobile hero                       | -0.03em  |
+| H1            | 800    | 40/44 desktop, 32/36 mobile             | -0.03em  |
+| H2            | 600    | 28/34                                   | -0.02em  |
+| H3            | 600    | 21/28                                   | -0.01em  |
+| Body large    | 400    | 19/30                                   | 0        |
+| Body          | 400    | 16/24                                   | 0        |
+| Small         | 400    | 14/20                                   | 0        |
+| Caption       | 500    | 12/16                                   | 0.01em   |
+| Mono          | 400    | 14/22 (JetBrains Mono)                  | 0        |
 
 - Load fonts with `next/font` (self-hosted, no layout shift).
-- Bold, tight headlines and calm body text are what make the style feel "Apple". Keep body
+- Heavy, very tight headlines with one highlighted phrase, and calm body text, give the style
+  its character. Keep body
   text at 16 px minimum and line length at 60–75 characters.
 
 ## 4. Spacing and layout
@@ -136,7 +168,7 @@ Rules:
 | Input              | Height 44px, `--radius-sm`, 1px `--input`, focus ring 2px `--ring` with 2px offset               |
 | Card               | `--surface`, 1px `--border`, `--radius-lg`, padding 24px; hover lifts with `--shadow-md` (light) |
 | Dialog             | `--radius-lg`, max width 480px (forms) / 640px (content), `--shadow-lg`                          |
-| Badge              | `--radius-full`, caption type, tinted background at 12% of the status color                      |
+| Badge              | `--radius-full`, caption type; status shown without colour: solid, secondary fill or outline     |
 | Skeleton           | `--surface-secondary` with a soft shimmer; respects reduced motion                               |
 | Icons              | Lucide, 1.75 stroke, 16px inline / 20px buttons / 24px empty states                              |
 
@@ -158,4 +190,4 @@ After every UI change, capture with Playwright:
 | Mobile   | 390 × 844  |
 | Desktop  | 1440 × 900 |
 
-Both in light and dark themes, then run the apple-design review and fix its findings.
+Both in light and dark themes, then review them against this file and fix what you find.
