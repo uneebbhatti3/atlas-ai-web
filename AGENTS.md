@@ -1,9 +1,11 @@
 <!-- BEGIN:nextjs-agent-rules -->
-<!--
-  This block is managed by Next.js. `create-next-app` (and `next dev` on 16.3+, when an
-  agent is detected) writes the official Next.js agent rules between these markers.
-  Keep the markers; put nothing of our own between them. Everything below END is ours.
--->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
 <!-- END:nextjs-agent-rules -->
 
 # Atlas AI Web: Agent Rules
@@ -129,6 +131,20 @@ React and Next.js:
   `loading`, `error`, `not-found`, `template`).
 - Keep components small and focused. Split anything that grows past roughly 200 lines.
 
+Next.js components and docs:
+
+- Use Next.js built-in components instead of raw HTML elements: `<Link>` from `next/link`
+  instead of `<a>`, `<Image>` from `next/image` instead of `<img>`, `next/font` instead of
+  font `<link>` tags, and `<Script>` from `next/script` instead of `<script>` for
+  third-party scripts. Before writing any Next.js code, read the official Next.js
+  documentation for the installed version (the bundled docs referenced at the top of this
+  file, in `node_modules/next/dist/docs/`, plus Context7), so the code uses the current
+  syntax. Never rely on memory for Next.js APIs.
+- Documented exceptions only: JSON-LD uses a server-rendered
+  `<script type="application/ld+json">`, as the Next.js docs recommend; and JSX inside
+  `ImageResponse` (`opengraph-image.tsx`) uses plain elements, because Next.js components do
+  not run there.
+
 Naming:
 
 - Files and folders: `kebab-case` (`workspace-card.tsx`).
@@ -155,21 +171,22 @@ Hygiene:
 
 1. **Docs first.** Use the Context7 MCP to check the current docs for Next.js, Tailwind CSS,
    shadcn/ui, TanStack Query and Framer Motion before writing code that uses them.
-2. **Design direction.** Follow `docs/Design.md`. Use the **apple-design** skill to plan and
-   review screens, and the **frontend-design** skill for execution craft. If they pull in
-   different directions, Apple-style restraint wins. The Apple skill is written for native
-   apps, so translate its guidance to web conventions (for example, no mobile tab bar on
-   desktop web).
-3. **Components.**
-   - Base primitives come from the **shadcn MCP** (`components/ui/`).
-   - Polished sections (hero, feature grids, pricing-style blocks) may come from the
-     **21st.dev MCP**. Every imported component must be adapted before use: remove `any`,
-     replace hardcoded colors and spacing with tokens, check its dependencies and ask before
-     adding new packages, and add reduced-motion handling.
+2. **Design direction.** Follow `docs/Design.md`, and use the **frontend-design** skill for
+   execution craft. When they pull in different directions, `docs/Design.md` wins.
+3. **Components: shadcn first.**
+   - Do not write new UI primitives (buttons, inputs, cards, badges, dialogs, menus, sheets,
+     tabs, tooltips, and so on). Use shadcn/ui components, added through the shadcn MCP.
+   - To change how a shadcn component looks, pass Tailwind classes through its `className`
+     prop (and its existing variants). Never edit the generated files in `src/components/ui/`.
+   - If something cannot be achieved with shadcn components and `className`, stop and ask.
+   - Page sections and layouts are allowed only as compositions of shadcn components, semantic
+     HTML and Tailwind classes.
+   - 21st.dev components may be used only when installed through the shadcn registry (not
+     hand-copied), and they follow the same `className` rule.
 4. **Verify visually.** After every UI change, use the **Playwright MCP** to screenshot:
    - mobile at 390×844 and desktop at 1440×900
    - light and dark themes
-     Then run an apple-design review against the screenshots and fix the issues it finds
+     Then review the screenshots against `docs/Design.md` and fix the issues you find
      before reporting the task as done.
 5. **Optional tools.** Chrome DevTools MCP for runtime debugging (console, network,
    performance). Figma MCP when the owner provides a Figma file.
@@ -190,7 +207,7 @@ Update **both** `docs/PROGRESS.md` and `docs/MEMORY.md` before starting the next
 
 ## 8. Git rules for agents
 
-- Never commit to, push to or merge into `main` or `staging`.
+- Never commit to, push to or merge into `main` or `integration`.
 - Work on the current `feature/*`, `fix/*`, `chore/*`, `docs/*` or `refactor/*` branch.
 - Do not push, open pull requests or merge unless the owner asks in the current request.
 - Commit messages follow Conventional Commits (`feat(workspaces): add empty state`).

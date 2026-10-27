@@ -1,0 +1,11 @@
+# Local safety net. The real protection is the GitHub rulesets (see docs/adr/0003).
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+case "$branch" in
+  main|integration)
+    echo "✗ Direct pushes to '$branch' are not allowed. Push a feature/* branch and open a PR."
+    exit 1
+    ;;
+esac
+
+npm run typecheck

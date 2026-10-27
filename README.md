@@ -62,8 +62,8 @@ Then add the scripts and strict TypeScript flags from [`docs/TRD.md`](docs/TRD.m
 
 ## GitHub and Vercel setup
 
-1. Push `main`, then create and push `staging`.
-2. Run `./scripts/setup-github.sh <owner>/atlas-ai-web`. It sets `staging` as the default
+1. Push `main`, then create and push `integration`.
+2. Run `./scripts/setup-github.sh <owner>/atlas-ai-web`. It sets `integration` as the default
    branch, configures merge methods and applies the rulesets in `.github/rulesets/`.
 3. In Vercel, import the repo, set the production branch to `main`, and add the variables from
    `.env.example` for Production and Preview.
@@ -97,7 +97,6 @@ Rules for each folder are in [`AGENTS.md`](AGENTS.md) §3–4.
 Skills, installed per user so they stay out of the repo:
 
 ```bash
-npx skills add dickwu/apple-design-skill -g
 npx skills add https://github.com/anthropics/skills --skill frontend-design -g
 ```
 

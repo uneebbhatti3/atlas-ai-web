@@ -1,0 +1,281 @@
+- generic [active] [ref=f14e1]:
+  - banner [ref=f14e2]:
+    - generic [ref=f14e3]:
+      - link "Atlas AI" [ref=f14e4] [cursor=pointer]:
+        - /url: /
+      - navigation "Main" [ref=f14e5]:
+        - link "How it works" [ref=f14e6] [cursor=pointer]:
+          - /url: "#how-it-works"
+        - link "Roadmap" [ref=f14e7] [cursor=pointer]:
+          - /url: "#roadmap"
+        - link "The lab" [ref=f14e8] [cursor=pointer]:
+          - /url: "#the-lab"
+      - generic [ref=f14e9]:
+        - button "Switch between light and dark theme" [ref=f14e10]
+        - link "GitHub" [ref=f14e11] [cursor=pointer]:
+          - /url: https://github.com/uneebbhatti3/atlas-ai-web
+  - main [ref=f14e12]:
+    - region [ref=f14e13]:
+      - generic [ref=f14e14]:
+        - heading "Your documents, organized into knowledge." [level=1] [ref=f14e15]
+        - paragraph [ref=f14e16]: Atlas AI is an AI knowledge and research workspace, built in public as an open-source engineering lab with a hand-written backend.
+        - generic [ref=f14e17]:
+          - link "View on GitHub" [ref=f14e18] [cursor=pointer]:
+            - /url: https://github.com/uneebbhatti3/atlas-ai-web
+          - link "See the roadmap" [ref=f14e19] [cursor=pointer]:
+            - /url: "#roadmap"
+      - generic [ref=f14e22]:
+        - 'figure "Preview of the Atlas AI workspace: a sidebar of workspaces and projects, an open Markdown document with a highlighted passage, and a planned Ask Atlas panel that answers a question with citations to that passage." [ref=f14e23]':
+          - generic [ref=f14e25]:
+            - generic [ref=f14e26]:
+              - generic [ref=f14e31]:
+                - generic [ref=f14e32]: Systems research
+                - generic [ref=f14e34]: Distributed caching
+              - generic [ref=f14e38]: Preview
+            - generic [ref=f14e39]:
+              - generic [ref=f14e40]:
+                - paragraph [ref=f14e41]: Workspaces
+                - generic [ref=f14e42]:
+                  - paragraph [ref=f14e43]: Systems research
+                  - generic [ref=f14e48]:
+                    - paragraph [ref=f14e49]:
+                      - generic [ref=f14e52]: Distributed caching
+                    - paragraph [ref=f14e53]:
+                      - generic [ref=f14e57]: cache-invalidation.md
+                    - paragraph [ref=f14e58]:
+                      - generic [ref=f14e62]: redis-vs-memcached.md
+                    - paragraph [ref=f14e63]:
+                      - generic [ref=f14e67]: reading-list.md
+                  - paragraph [ref=f14e69]:
+                    - generic [ref=f14e72]: Message queues
+                  - paragraph [ref=f14e74]:
+                    - generic [ref=f14e77]: Postgres internals
+                - generic [ref=f14e78]:
+                  - paragraph [ref=f14e79]: Reading notes
+                  - paragraph [ref=f14e85]:
+                    - generic [ref=f14e88]: Designing Data-Intensive Apps
+              - generic [ref=f14e89]:
+                - generic [ref=f14e90]:
+                  - generic [ref=f14e91]: Markdown
+                  - generic [ref=f14e92]: 4 min read
+                  - generic [ref=f14e93]: Edited today
+                - paragraph [ref=f14e94]: Cache invalidation
+                - paragraph [ref=f14e95]:
+                  - text: A cache is only as good as its invalidation strategy.
+                  - mark [ref=f14e96]: Write-through keeps the cache consistent at the cost of slower writes,
+                  - text: while TTL-based expiry trades a window of staleness for simplicity. Most systems end up combining both.
+                - paragraph [ref=f14e97]: Strategies compared
+                - list [ref=f14e98]:
+                  - listitem [ref=f14e99]: Write-through
+                  - listitem [ref=f14e101]: Write-behind
+                  - listitem [ref=f14e103]: TTL expiry
+                  - listitem [ref=f14e105]: Explicit purge on write
+              - generic [ref=f14e107]:
+                - generic [ref=f14e108]:
+                  - paragraph [ref=f14e109]: Ask Atlas
+                  - generic [ref=f14e113]: Planned
+                - paragraph [ref=f14e114]: When should I prefer write-through over TTL expiry?
+                - paragraph [ref=f14e115]:
+                  - text: Prefer write-through when stale reads are unacceptable, because it keeps the cache consistent on every write. TTL expiry is simpler and fine when a short window of staleness is tolerable.
+                  - generic [ref=f14e116]: "1"
+                  - generic [ref=f14e117]: "2"
+                - separator [ref=f14e118]
+                - generic [ref=f14e119]:
+                  - paragraph [ref=f14e120]: Sources
+                  - generic [ref=f14e121]:
+                    - generic [ref=f14e122]: "1"
+                    - generic [ref=f14e123]:
+                      - paragraph [ref=f14e124]: cache-invalidation.md
+                      - paragraph [ref=f14e125]: Write-through keeps the cache consistent at the cost of slower writes
+                  - generic [ref=f14e126]:
+                    - generic [ref=f14e127]: "2"
+                    - generic [ref=f14e128]:
+                      - paragraph [ref=f14e129]: redis-vs-memcached.md
+                      - paragraph [ref=f14e130]: Both support TTLs per key; Redis adds keyspace notifications
+        - list "How Atlas organizes knowledge" [ref=f14e132]:
+          - listitem [ref=f14e133]:
+            - generic [ref=f14e134]: Workspace
+          - listitem [ref=f14e135]:
+            - generic [ref=f14e138]: Project
+          - listitem [ref=f14e139]:
+            - generic [ref=f14e142]: Documents
+          - listitem [ref=f14e143]:
+            - generic [ref=f14e146]:
+              - text: Knowledge
+              - generic [ref=f14e147]: (planned)
+          - listitem [ref=f14e148]:
+            - generic [ref=f14e151]:
+              - text: AI
+              - generic [ref=f14e152]: (planned)
+    - region [ref=f14e153]:
+      - generic [ref=f14e155]:
+        - heading "How it works" [level=2] [ref=f14e156]
+        - paragraph [ref=f14e157]: One workspace, built up stage by stage. Each tab shows a screen from the roadmap and what is true about it today.
+      - generic [ref=f14e159]:
+        - tablist [ref=f14e160]:
+          - tab "Organize" [selected] [ref=f14e161]
+          - tab "Process" [ref=f14e162]
+          - tab "Search" [ref=f14e163]
+          - tab "Ask" [ref=f14e164]
+        - tabpanel [ref=f14e165]:
+          - generic [ref=f14e166]:
+            - generic [ref=f14e167]:
+              - generic [ref=f14e168]: Stage 1
+              - generic [ref=f14e169]: In progress
+            - heading "Everything has a place" [level=3] [ref=f14e170]
+            - paragraph [ref=f14e171]: Workspaces hold projects, projects hold Markdown documents. One hierarchy, so every note can be found and every answer can trace back to it.
+          - generic [ref=f14e173]:
+            - generic [ref=f14e174]:
+              - generic [ref=f14e179]: Systems research
+              - generic [ref=f14e182]: Preview
+            - generic [ref=f14e183]:
+              - generic [ref=f14e184]:
+                - paragraph [ref=f14e185]: Systems research
+                - paragraph [ref=f14e186]: 3 projects in this workspace
+              - list [ref=f14e187]:
+                - listitem [ref=f14e188]:
+                  - generic [ref=f14e192]:
+                    - paragraph [ref=f14e193]: Distributed caching
+                    - paragraph [ref=f14e194]: 3 documents
+                  - generic [ref=f14e198]: Today
+                - listitem [ref=f14e199]:
+                  - generic [ref=f14e203]:
+                    - paragraph [ref=f14e204]: Message queues
+                    - paragraph [ref=f14e205]: 5 documents
+                  - generic [ref=f14e209]: Yesterday
+                - listitem [ref=f14e210]:
+                  - generic [ref=f14e214]:
+                    - paragraph [ref=f14e215]: Postgres internals
+                    - paragraph [ref=f14e216]: 8 documents
+                  - generic [ref=f14e220]: Oct 21
+    - region [ref=f14e221]:
+      - generic [ref=f14e222]:
+        - generic [ref=f14e224]:
+          - heading "Roadmap" [level=2] [ref=f14e225]
+          - paragraph [ref=f14e226]: Atlas grows one stage at a time. The frontend follows the backend, and each stage ships to production standards before the next one starts.
+        - list [ref=f14e227]:
+          - listitem [ref=f14e228]:
+            - generic [ref=f14e230]:
+              - generic [ref=f14e231]:
+                - generic [ref=f14e232]: Stage 1
+                - generic [ref=f14e233]: In progress
+              - heading "Knowledge organization" [level=3] [ref=f14e234]
+              - paragraph [ref=f14e235]: Accounts, workspaces, projects and Markdown documents, with protected routes and account settings.
+          - listitem [ref=f14e236]:
+            - generic [ref=f14e238]:
+              - generic [ref=f14e239]:
+                - generic [ref=f14e240]: Stage 2
+                - generic [ref=f14e241]: Planned
+              - heading "Uploads and processing" [level=3] [ref=f14e242]
+              - paragraph [ref=f14e243]: File uploads with progress, visible processing states and retry for failed jobs.
+          - listitem [ref=f14e244]:
+            - generic [ref=f14e246]:
+              - generic [ref=f14e247]:
+                - generic [ref=f14e248]: Stage 3
+                - generic [ref=f14e249]: Planned
+              - heading "Search" [level=3] [ref=f14e250]
+              - paragraph [ref=f14e251]: Full-text and semantic search, with every result attributed to its source.
+          - listitem [ref=f14e252]:
+            - generic [ref=f14e254]:
+              - generic [ref=f14e255]:
+                - generic [ref=f14e256]: Stage 4
+                - generic [ref=f14e257]: Planned
+              - heading "AI conversations" [level=3] [ref=f14e258]
+              - paragraph [ref=f14e259]: Streamed answers with citations, grounded in your own documents.
+          - listitem [ref=f14e260]:
+            - generic [ref=f14e262]:
+              - generic [ref=f14e263]:
+                - generic [ref=f14e264]: Stage 5 and beyond
+                - generic [ref=f14e265]: Planned
+              - heading "Research, agents and more" [level=3] [ref=f14e266]
+              - paragraph [ref=f14e267]: Research reports, agents, collaboration, notifications, usage dashboards and a mobile app.
+    - region [ref=f14e268]:
+      - generic [ref=f14e269]:
+        - generic [ref=f14e270]:
+          - generic [ref=f14e271]:
+            - heading "Built to learn, in public" [level=2] [ref=f14e272]
+            - paragraph [ref=f14e273]: Atlas AI is a personal engineering lab, not a startup. It exists to learn backend engineering, system design, retrieval-augmented generation and infrastructure in depth, by building a real product to production standards.
+          - paragraph [ref=f14e274]: The NestJS backend is written by hand. AI helps build the interface; the API, the data model and the architecture are designed and written without it.
+        - generic [ref=f14e275]:
+          - generic [ref=f14e276]:
+            - heading "Frontend" [level=3] [ref=f14e277]
+            - list [ref=f14e278]:
+              - listitem [ref=f14e279]:
+                - generic [ref=f14e280]: Next.js
+              - listitem [ref=f14e281]:
+                - generic [ref=f14e282]: React
+              - listitem [ref=f14e283]:
+                - generic [ref=f14e284]: TypeScript
+              - listitem [ref=f14e285]:
+                - generic [ref=f14e286]: Tailwind CSS
+              - listitem [ref=f14e287]:
+                - generic [ref=f14e288]: shadcn/ui
+              - listitem [ref=f14e289]:
+                - generic [ref=f14e290]: TanStack Query
+              - listitem [ref=f14e291]:
+                - generic [ref=f14e292]: Zustand
+          - generic [ref=f14e293]:
+            - heading "Backend" [level=3] [ref=f14e294]
+            - list [ref=f14e295]:
+              - listitem [ref=f14e296]:
+                - generic [ref=f14e297]: NestJS
+              - listitem [ref=f14e298]:
+                - generic [ref=f14e299]: Better Auth
+              - listitem [ref=f14e300]:
+                - generic [ref=f14e301]: PostgreSQL
+          - generic [ref=f14e302]:
+            - heading "Platform" [level=3] [ref=f14e303]
+            - list [ref=f14e304]:
+              - listitem [ref=f14e305]:
+                - generic [ref=f14e306]: Vercel
+              - listitem [ref=f14e307]:
+                - generic [ref=f14e308]: GitHub Actions
+      - generic [ref=f14e310]:
+        - generic [ref=f14e311]:
+          - heading "Decision log" [level=3] [ref=f14e313]
+          - paragraph [ref=f14e314]: Every significant decision is recorded as an Architecture Decision Record, so the reasoning is as public as the code.
+        - list [ref=f14e316]:
+          - listitem [ref=f14e317]:
+            - generic [ref=f14e318]:
+              - generic [ref=f14e319]: ADR-0003
+              - time [ref=f14e320]: 2026-10-26
+            - paragraph [ref=f14e321]: Branching model and merge protection
+            - paragraph [ref=f14e322]: Feature branches go through staging; nobody pushes to main directly.
+          - listitem [ref=f14e323]:
+            - generic [ref=f14e324]:
+              - generic [ref=f14e325]: ADR-0002
+              - time [ref=f14e326]: 2026-10-26
+            - paragraph [ref=f14e327]: No Docker image for the frontend
+            - paragraph [ref=f14e328]: Vercel builds from Git, so a frontend image would be unused work.
+          - listitem [ref=f14e329]:
+            - generic [ref=f14e330]:
+              - generic [ref=f14e331]: ADR-0001
+              - time [ref=f14e332]: 2026-10-26
+            - paragraph [ref=f14e333]: Frontend stack and repository layout
+            - paragraph [ref=f14e334]: Next.js, shadcn/ui and TanStack Query, in a repo separate from the API.
+    - region [ref=f14e335]:
+      - generic [ref=f14e338]:
+        - heading "Follow the build" [level=2] [ref=f14e339]
+        - paragraph [ref=f14e340]: The code, the decisions and the mistakes are all public. Star the repository to follow along, or connect on LinkedIn for progress updates.
+        - generic [ref=f14e341]:
+          - link "Star on GitHub" [ref=f14e342] [cursor=pointer]:
+            - /url: https://github.com/uneebbhatti3/atlas-ai-web
+          - link "Follow on LinkedIn" [ref=f14e343] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/uneeb-bhatti/
+  - contentinfo [ref=f14e344]:
+    - generic [ref=f14e345]:
+      - separator [ref=f14e346]
+      - generic [ref=f14e347]:
+        - generic [ref=f14e348]:
+          - link "Atlas AI" [ref=f14e349] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f14e350]:
+            - text: © 2026 Atlas AI.
+            - link "Built by Uneeb Bhatti" [ref=f14e351] [cursor=pointer]:
+              - /url: https://uneebbhatti.vercel.app/
+        - navigation "Footer" [ref=f14e352]:
+          - link "GitHub" [ref=f14e353] [cursor=pointer]:
+            - /url: https://github.com/uneebbhatti3/atlas-ai-web
+          - link "LinkedIn" [ref=f14e354] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/uneeb-bhatti/
+  - alert [ref=f14e355]

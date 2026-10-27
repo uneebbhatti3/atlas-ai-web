@@ -1,0 +1,692 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to content" [ref=e3] [cursor=pointer]:
+      - /url: "#top"
+    - banner [ref=e4]:
+      - link "shipanysaas" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - navigation "Main" [ref=e10]:
+        - list [ref=e11]:
+          - listitem [ref=e12]:
+            - link "Features" [ref=e13] [cursor=pointer]:
+              - /url: /#inside
+          - listitem [ref=e14]:
+            - link "Pricing" [ref=e15] [cursor=pointer]:
+              - /url: /#pricing
+          - listitem [ref=e16]:
+            - link "Demo" [ref=e17] [cursor=pointer]:
+              - /url: https://shipanysaas-demo.vercel.app/auth/sign-in?demo=1
+          - listitem [ref=e18]:
+            - link "FAQ" [ref=e19] [cursor=pointer]:
+              - /url: /#faq
+          - listitem [ref=e20]:
+            - link "Docs" [ref=e21] [cursor=pointer]:
+              - /url: /docs
+      - link "Get the kit" [ref=e23] [cursor=pointer]:
+        - /url: /#pricing
+    - main [ref=e24]:
+      - region [ref=e25]:
+        - generic [ref=e26]:
+          - heading "Launch your SaaS with shipanysaas." [level=1] [ref=e27]: Launch your SaaSwith shipanysaas.
+          - generic [ref=e28]:
+            - generic [ref=e29]:
+              - link "Get the kit" [ref=e31] [cursor=pointer]:
+                - /url: /#pricing
+              - link "Try the live demo" [ref=e37] [cursor=pointer]:
+                - /url: https://shipanysaas-demo.vercel.app/auth/sign-in?demo=1
+            - paragraph [ref=e41]: "Launch price: $49 web · $99 with iOS and Android, first 100 customers"
+        - group "Sample requests to your coding agent" [ref=e42]:
+          - generic [ref=e43]: "Try it, tap a request:"
+          - button "Pause the demo" [ref=e44] [cursor=pointer]
+          - button "Projects page" [ref=e48] [cursor=pointer]
+          - button "Payments" [ref=e54] [cursor=pointer]
+          - button "Team invites" [ref=e57] [cursor=pointer]
+          - button "iPhone app" [ref=e63] [cursor=pointer]
+        - generic [ref=e66]:
+          - paragraph [ref=e67]
+          - generic [ref=e68]:
+            - paragraph [ref=e69]: "Sample chat with a coding agent:"
+            - list [ref=e70]:
+              - listitem [ref=e71]: "You: Add a Projects page"
+              - listitem [ref=e72]: "You: I can’t code, is that ok?"
+              - listitem [ref=e73]: "Your agent: Yes. Login’s done, so:"
+              - listitem [ref=e74]: "Your agent: private table, web, phone 🔒"
+              - listitem [ref=e75]: "You: Can other teams see it?"
+              - listitem [ref=e76]: "Your agent: No, and I tested that."
+              - listitem [ref=e77]: "Result: Projects page added. Each team sees only its own projects."
+              - listitem [ref=e78]: "Result: Security check passed. Nobody could open another team’s projects."
+          - generic [ref=e80]:
+            - generic [ref=e81]: your-app · Claude Code
+            - list [ref=e86]:
+              - listitem [ref=e87]:
+                - generic [ref=e88]: ›
+                - generic [ref=e89]: Read AGENTS.md (+ supabase/)
+              - listitem [ref=e90]:
+                - generic [ref=e91]: +
+                - generic [ref=e92]: schemas/18-projects.sql
+              - listitem [ref=e93]:
+                - generic [ref=e94]: create policy projects_read
+              - listitem [ref=e95]:
+                - generic [ref=e96]: using (has_role_on_account(…))
+              - listitem [ref=e97]:
+                - generic [ref=e98]: +
+                - generic [ref=e99]: …/[account]/projects/page.tsx
+              - listitem [ref=e100]:
+                - generic [ref=e101]: +
+                - generic [ref=e102]: …/(tabs)/projects/index.tsx
+              - listitem [ref=e103]:
+                - generic [ref=e104]: +
+                - generic [ref=e105]: tests/database/projects.test.sql
+              - listitem [ref=e106]:
+                - generic [ref=e107]: $
+                - generic [ref=e108]: pnpm --filter web supabase:test
+              - listitem [ref=e109]:
+                - generic [ref=e110]: ✓
+                - generic [ref=e111]: another team was denied
+          - generic [ref=e115]:
+            - generic [ref=e123]:
+              - generic [ref=e124]: Projects page added
+              - generic [ref=e125]: web and phone · just now
+            - paragraph [ref=e126]: Each team sees only its own projects.
+          - generic [ref=e129]:
+            - generic [ref=e136]:
+              - generic [ref=e137]: Security check passed
+              - generic [ref=e138]: your agent · just now
+            - paragraph [ref=e139]: Nobody could open another team’s projects.
+            - generic [ref=e140]: All tests passed
+          - generic [ref=e147]:
+            - generic [ref=e148]: 9:41
+            - generic: Claude Code
+            - generic [ref=e167]:
+              - generic [ref=e168]: Today at 9:41 AM
+              - generic [ref=e170]: Add a Projects page
+              - generic [ref=e172]: I can’t code, is that ok?
+              - generic [ref=e174]: "Yes. Login’s done, so:"
+              - generic [ref=e176]: private table, web, phone 🔒
+              - generic [ref=e178]: Can other teams see it?
+              - generic [ref=e181]:
+                - text: No, and I tested that.
+                - generic [aria-hidden] [ref=e182]: ❤️
+            - generic [ref=e188]: Message
+      - generic [ref=e197]:
+        - heading "One codebase, every platform, always shipping." [level=2] [ref=e198]:
+          - generic [ref=e199]: One codebase,
+          - generic [ref=e201]: every platform,
+          - generic [ref=e205]: always shipping.
+        - paragraph [ref=e207]: The SaaS starter kit for any coding agent. Your website and phone app share login, teams and plan.
+        - group "Platforms and services included" [ref=e208]:
+          - generic [ref=e209]:
+            - figure "Web Next.js" [ref=e210]:
+              - generic [ref=e215]:
+                - generic [ref=e216]: Web
+                - generic [ref=e217]: Next.js
+            - figure "iOS & Android Expo" [ref=e218]:
+              - generic [ref=e222]:
+                - generic [ref=e223]: iOS & Android
+                - generic [ref=e224]: Expo
+            - figure "Auth & data Supabase" [ref=e225]:
+              - generic [ref=e231]:
+                - generic [ref=e232]: Auth & data
+                - generic [ref=e233]: Supabase
+            - figure "Billing Stripe" [ref=e234]:
+              - generic [ref=e238]:
+                - generic [ref=e239]: Billing
+                - generic [ref=e240]: Stripe
+            - figure "Email Resend" [ref=e241]:
+              - generic [ref=e246]:
+                - generic [ref=e247]: Email
+                - generic [ref=e248]: Resend
+            - figure "Any agent AGENTS.md" [ref=e249]:
+              - generic [ref=e254]:
+                - generic [ref=e255]: Any agent
+                - generic [ref=e256]: AGENTS.md
+      - generic [ref=e258]:
+        - generic [ref=e259]:
+          - generic [ref=e260]: Launch plan
+          - heading "Your launch week, planned." [level=2] [ref=e261]
+          - paragraph [ref=e262]: A sample week. Claude Code, Codex or Cursor does each step, and you approve it.
+        - region "Launch-week plan (scrolls sideways)" [ref=e263]:
+          - generic [ref=e264]:
+            - generic [ref=e265]:
+              - generic [ref=e266]:
+                - heading "Monday" [level=3] [ref=e267]
+                - paragraph [ref=e268]: Sep 28
+              - generic [ref=e269]:
+                - article [ref=e270]:
+                  - generic [ref=e271]: 9:00 AM
+                  - paragraph [ref=e278]: Clone the kit and sign in to your app
+                - article [ref=e279]:
+                  - generic [ref=e280]: 12:00 PM
+                  - paragraph [ref=e286]: Tell your agent what you’re building
+                - generic [ref=e287]:
+                  - generic [ref=e288]: 6:00 PM
+                  - generic [ref=e289]: Open
+            - generic [ref=e290]:
+              - generic [ref=e291]:
+                - heading "Tuesday" [level=3] [ref=e292]
+                - paragraph [ref=e293]: Sep 29
+              - generic [ref=e294]:
+                - generic [ref=e295]:
+                  - generic [ref=e296]: 8:00 AM
+                  - generic [ref=e297]: Open
+                - article [ref=e298]:
+                  - generic [ref=e299]: 12:00 PM
+                  - paragraph [ref=e306]: Projects saved, private to each team
+                - article [ref=e307]:
+                  - generic [ref=e308]: 6:00 PM
+                  - paragraph [ref=e314]: Projects page on the web
+            - generic [ref=e315]:
+              - generic [ref=e316]:
+                - heading "Wednesday" [level=3] [ref=e317]
+                - paragraph [ref=e318]: Sep 30
+              - generic [ref=e319]:
+                - article [ref=e320]:
+                  - generic [ref=e321]: 8:00 AM
+                  - paragraph [ref=e326]: Projects screen on iPhone and Android
+                - generic [ref=e327]:
+                  - generic [ref=e328]: 12:00 PM
+                  - generic [ref=e329]: Open
+                - article [ref=e330]:
+                  - generic [ref=e331]: 6:00 PM
+                  - paragraph [ref=e336]: Stripe plans and checkout
+            - generic [ref=e337]:
+              - generic [ref=e338]:
+                - heading "Thursday" [level=3] [ref=e339]
+                - paragraph [ref=e340]: Oct 1
+              - generic [ref=e341]:
+                - generic [ref=e342]:
+                  - generic [ref=e343]: 8:00 AM
+                  - generic [ref=e344]: Open
+                - article [ref=e345]:
+                  - generic [ref=e346]: 12:00 PM
+                  - paragraph [ref=e352]: Welcome email for new sign-ups
+                - article [ref=e353]:
+                  - generic [ref=e354]: 6:00 PM
+                  - paragraph [ref=e360]: Go live, then list it on the showcase
+          - generic [aria-hidden]:
+            - article:
+              - generic: 8:00 AM
+              - paragraph: "Security check: no team can see another team’s data"
+        - complementary [aria-hidden]:
+          - generic:
+            - paragraph: Your agent
+            - paragraph: moved the security check to Tuesday 8 AM. safer first ✅
+      - region [ref=e361]:
+        - generic [ref=e362]:
+          - generic [ref=e363]:
+            - heading "Customer data, kept apart." [level=2] [ref=e364]
+            - paragraph [ref=e365]: Every table is locked by default. The kit’s tests sign in as other teams and try to break in.
+          - generic [ref=e367]:
+            - group [ref=e368]:
+              - generic [ref=e369]:
+                - heading "Security check" [level=3] [ref=e370]
+                - generic [ref=e371]: 23 database test files
+              - list [ref=e372]:
+                - listitem [ref=e373]:
+                  - generic [ref=e377]:
+                    - paragraph [ref=e378]: Each team sees only its own data
+                    - paragraph [ref=e379]: A test fails if any table is left unlocked
+                - listitem [ref=e380]:
+                  - generic [ref=e384]:
+                    - paragraph [ref=e385]: Nobody can give themselves a paid plan
+                    - paragraph [ref=e386]: Only verified payment events can change it
+                - listitem [ref=e387]:
+                  - generic [ref=e391]:
+                    - paragraph [ref=e392]: The admin panel needs two-step sign-in
+                    - paragraph [ref=e393]: And nobody can make themselves an admin
+                - listitem [ref=e394]:
+                  - generic [ref=e398]:
+                    - paragraph [ref=e399]: Deleting a team needs an emailed code
+                    - paragraph [ref=e400]: Each code works once and locks after too many wrong guesses
+                - listitem [ref=e401]:
+                  - generic [ref=e405]:
+                    - paragraph [ref=e406]: The master key stays on the server
+                    - paragraph [ref=e407]: It never reaches a browser or the phone app
+            - generic [ref=e420]:
+              - generic [ref=e421]: Your agent
+              - generic [ref=e422]: 8:04 AM
+              - paragraph [ref=e423]: added Projects and tried to open them as another team. access denied
+      - generic [ref=e426]:
+        - generic [ref=e427]:
+          - generic [ref=e428]:
+            - heading "Batteries included." [level=2] [ref=e429]
+            - paragraph [ref=e430]: Login, teams, payments, emails and admin, built and tested. Your agent starts on your idea, not on setup.
+          - generic [ref=e432]:
+            - generic [ref=e433]:
+              - generic [ref=e442]:
+                - generic [ref=e443]: Payments
+                - generic [ref=e444]: 7:42 AM
+                - paragraph [ref=e445]: Northwind upgraded to Pro, 5 seats at $49 each
+              - generic [ref=e454]:
+                - generic [ref=e455]: Teams
+                - generic [ref=e456]: 12:04 PM
+                - paragraph [ref=e457]: Priya accepted your invite and joined as a member
+              - generic [ref=e466]:
+                - generic [ref=e467]: Sign-ups
+                - generic [ref=e468]: 6:48 PM
+                - paragraph [ref=e469]: 3 new sign-ups today, 2 with Google
+            - generic [ref=e477]: Ask your agent to add a feature…
+        - generic [ref=e482]:
+          - generic [ref=e483]:
+            - heading "Mobile on day one." [level=2] [ref=e484]
+            - paragraph [ref=e485]: iPhone and Android share login, teams and your plan with the web app. Sign-ins are stored encrypted.
+          - generic [ref=e487]:
+            - generic [ref=e488]:
+              - generic [ref=e489]:
+                - generic [ref=e490]: Your app, running
+                - generic [ref=e494]: after setup
+              - generic [ref=e495]:
+                - generic [ref=e496]:
+                  - generic [ref=e498]: Web app
+                  - generic [ref=e499]: in your browser
+                  - generic [ref=e500]: running
+                - generic [ref=e501]:
+                  - generic [ref=e503]: iPhone
+                  - generic [ref=e504]: simulator or phone
+                  - generic [ref=e505]: ready to build
+                - generic [ref=e506]:
+                  - generic [ref=e508]: Android
+                  - generic [ref=e509]: simulator or phone
+                  - generic [ref=e510]: ready to build
+              - generic [ref=e511]:
+                - generic [ref=e512]: same login, teams and plan on every platform
+                - generic [ref=e513]: ✓ all set
+            - generic [ref=e522]:
+              - generic [ref=e523]: Your app
+              - generic [ref=e524]: 12:04 PM
+              - paragraph [ref=e525]: signed in as Priya. same team, same plan as on the web
+        - generic [ref=e526]:
+          - generic [ref=e527]:
+            - heading "Marketing in the box." [level=2] [ref=e528]
+            - paragraph [ref=e529]: Blog, docs and a pricing page, built in. Launch, then list it on the showcase for a link Google counts.
+          - generic [ref=e531]:
+            - generic [ref=e532]:
+              - generic [ref=e533]:
+                - generic [ref=e534]: shipanysaas.com/showcase
+                - generic [ref=e535]: links to you
+              - generic [ref=e536]:
+                - generic [aria-hidden] [ref=e537]: YP
+                - generic [ref=e538]:
+                  - generic [ref=e539]:
+                    - generic [ref=e540]: Your product
+                    - generic [ref=e541]: Featured
+                  - paragraph [ref=e542]: you · SaaS · web, iOS, Android
+              - paragraph [ref=e543]: One line about what it does and who it is for.
+              - generic [ref=e544]:
+                - generic [ref=e545]: launched 2026-10
+                - generic [ref=e546]: Visit ↗
+            - generic [ref=e555]:
+              - generic [ref=e556]: shipanysaas
+              - generic [ref=e557]: 6:48 PM
+              - paragraph [ref=e558]: your product is live on the showcase, linked to your site 🔗
+      - region [ref=e559]:
+        - generic [ref=e560]:
+          - heading "Everything inside, ready to ship." [level=2] [ref=e561]
+          - paragraph [ref=e562]: Pick a part of the kit to see what you get. Every item is in the code and explained in the docs.
+        - generic [ref=e563]:
+          - tablist "Parts of the kit" [ref=e564]:
+            - tab "Login" [selected] [ref=e565]
+            - tab "Teams" [ref=e566]
+            - tab "Payments" [ref=e567]
+            - tab "Emails" [ref=e568]
+            - tab "Admin" [ref=e569]
+            - tab "Marketing" [ref=e570]
+            - tab "Phone app" [ref=e571]
+            - tab "Security" [ref=e572]
+            - tab "Coding agents" [ref=e573]
+            - tab "Build & deploy" [ref=e574]
+          - tabpanel [ref=e575]:
+            - generic [ref=e576]:
+              - generic [ref=e577]:
+                - heading "Sign-in, done for you" [level=3] [ref=e578]
+                - paragraph [ref=e579]: Every way your users expect to sign in, plus the emails and safety checks around it.
+                - generic [ref=e580]:
+                  - link "Read the docs" [ref=e581] [cursor=pointer]:
+                    - /url: /docs/authentication/authentication
+                  - link "Try it in the live demo" [ref=e584] [cursor=pointer]:
+                    - /url: https://shipanysaas-demo.vercel.app/auth/sign-in?demo=1
+              - list [ref=e588]:
+                - listitem [ref=e589]:
+                  - generic [ref=e593]: Email and password, with reset and confirmation
+                - listitem [ref=e594]:
+                  - generic [ref=e598]: Sign in with Google, or GitHub, Apple and more
+                - listitem [ref=e599]:
+                  - generic [ref=e603]: Magic links, email codes and passkeys to switch on
+                - listitem [ref=e604]:
+                  - generic [ref=e608]: Two-step sign-in with an authenticator app
+                - listitem [ref=e609]:
+                  - generic [ref=e613]: A captcha against bots, ready when you add a key
+                - listitem [ref=e614]:
+                  - generic [ref=e618]: Confirm, magic-link and reset emails, already designed
+      - generic [ref=e619]:
+        - generic [ref=e620]:
+          - heading "Your agent runs the loop." [level=2] [ref=e621]
+          - paragraph [ref=e622]: Voice note in, tested feature out. You don’t write a line of code.
+        - generic [ref=e624]:
+          - generic [ref=e625]: Today at 4:15 PM
+          - generic [ref=e627]: 0:41
+          - generic [ref=e675]: love it. Projects on the web and the phone app. i’ll test it before you see it 🧪
+          - generic [ref=e681]: go
+          - generic [ref=e683]: done. all tests pass, here’s the link to try it ✅
+          - generic [ref=e691]:
+            - text: want me to draft the update post and the showcase listing?
+            - generic [aria-hidden] [ref=e692]: ❤️
+      - region [ref=e693]:
+        - generic [ref=e694]:
+          - generic [ref=e695]:
+            - paragraph [ref=e696]: shipanysaas
+            - generic [aria-hidden] [ref=e699]: the codebase
+          - paragraph [ref=e700]: +
+          - generic [ref=e701]:
+            - list "Coding agents set up to work with the kit" [ref=e702]:
+              - listitem [ref=e703]:
+                - generic [ref=e704]: Claude Code
+              - listitem [ref=e706]:
+                - generic [ref=e707]: GitHub Copilot
+              - listitem [ref=e709]:
+                - generic [ref=e710]: OpenAI Codex
+              - listitem [ref=e712]:
+                - generic [ref=e713]: Cursor
+              - listitem [ref=e715]:
+                - generic [ref=e716]: JetBrains Junie
+              - listitem [ref=e718]:
+                - generic [ref=e719]: Google Antigravity
+              - listitem [ref=e721]:
+                - generic [ref=e722]: Devin
+              - listitem [ref=e724]:
+                - generic [ref=e725]: Kiro
+              - listitem [ref=e727]:
+                - generic [ref=e728]: Grok Build
+              - listitem [ref=e730]:
+                - generic [ref=e731]: Cline
+            - generic [aria-hidden] [ref=e733]: your AI agent
+          - paragraph [aria-hidden] [ref=e734]: Claude Code · GitHub Copilot · OpenAI Codex · Cursor · JetBrains Junie · Google Antigravity · Devin · Kiro · Grok Build · Cline
+          - paragraph [ref=e735]: =
+          - heading "Launch your idea on web, iOS and Android." [level=2] [ref=e736]
+          - paragraph [ref=e737]: Use the agent you already pay for. Its instructions live in your project, so you can switch any time. Or any agent that reads AGENTS.md. Your project also holds up to 51 ready-made skills and 17 written fixes.
+      - region [ref=e738]:
+        - heading "Building a SaaS before and after shipanysaas" [level=2] [ref=e739]
+        - generic [ref=e740]:
+          - heading "Without shipanysaas" [level=3] [ref=e741]
+          - generic [aria-hidden] [ref=e742]:
+            - generic [ref=e744]:
+              - generic [ref=e745]: Untitled repo
+              - generic [ref=e746]: Edited 3 weeks ago
+            - generic [ref=e751]:
+              - generic [ref=e752]: Sunday
+              - generic [ref=e755]:
+                - generic [ref=e756]: Set up auth (again)
+                - generic [ref=e757]: 9:00 PM · repeats weekly
+            - generic [ref=e759]:
+              - generic [ref=e760]: Launches
+              - generic [ref=e761]: Shipped once · 3 weeks ago
+          - paragraph [ref=e765]: Blank repos. The launch keeps slipping.
+        - generic [ref=e766]:
+          - heading "With shipanysaas" [level=3] [ref=e767]
+          - generic [aria-hidden] [ref=e768]:
+            - generic [ref=e778]:
+              - generic [ref=e779]: Your agent
+              - generic [ref=e780]: 7:42 AM
+              - paragraph [ref=e781]: login, teams and billing were already done ☕
+            - generic [ref=e791]:
+              - generic [ref=e792]: Your agent
+              - generic [ref=e793]: 12:04 PM
+              - paragraph [ref=e794]: Projects page is ready. reply to approve
+            - generic [ref=e804]:
+              - generic [ref=e805]: Your agent
+              - generic [ref=e806]: 6:12 PM
+              - paragraph [ref=e807]: live tuesday at 6. here’s the link 🔗
+          - paragraph [ref=e808]: That’s the whole workflow.
+      - region [ref=e809]:
+        - generic [ref=e810]:
+          - generic [ref=e811]: Pricing
+          - heading "Pay once. Ship unlimited products." [level=2] [ref=e812]
+          - paragraph [ref=e813]: Starter is the web app. All-in adds the iPhone, iPad and Android app on the same backend. Both are one payment, with unlimited projects.
+        - generic [ref=e814]:
+          - paragraph [ref=e815]: Launch prices for the first 100 customers. Then $149 and $249.
+          - generic [ref=e817]:
+            - generic [ref=e818]:
+              - generic [ref=e819]: $49 / $99
+              - generic [ref=e820]: First 100 customers
+            - generic [ref=e821]:
+              - generic [ref=e822]: $149 / $249
+              - generic [ref=e823]: After that
+        - generic [ref=e824]:
+          - article [ref=e825]:
+            - generic [ref=e826]:
+              - heading "Starter" [level=3] [ref=e827]
+              - paragraph [ref=e828]: For founders and developers launching on the web.
+            - generic [ref=e829]:
+              - generic [ref=e830]:
+                - generic [ref=e831]: $49
+                - generic [ref=e832]: one-time
+                - generic [ref=e833]: Early-bird
+              - paragraph [ref=e834]: Then $149 after the first 100 customers.
+            - list [ref=e835]:
+              - listitem [ref=e836]:
+                - generic [ref=e839]: "Next.js app: sign-in, teams, billing, admin"
+              - listitem [ref=e840]:
+                - generic [ref=e843]: Stripe or Lemon Squeezy payments
+              - listitem [ref=e844]:
+                - generic [ref=e847]: "SEO: sitemap, meta tags, JSON-LD, blog, docs"
+              - listitem [ref=e848]:
+                - generic [ref=e851]: "Ready for AI search (AEO): llms.txt + JSON-LD"
+              - listitem [ref=e852]:
+                - generic [ref=e855]: Customer data kept apart, with break-in tests
+              - listitem [ref=e856]:
+                - generic [ref=e859]: Works with Claude Code, Codex in ChatGPT, Cursor, Copilot and 6 more
+              - listitem [ref=e865]:
+                - generic [ref=e868]: 44 agent skills and 6 written fixes
+              - listitem [ref=e869]:
+                - generic [ref=e872]: Unlimited projects, yours and your clients’
+            - generic [ref=e873]:
+              - link "Get Starter" [ref=e874] [cursor=pointer]:
+                - /url: https://buy.stripe.com/fZufZj0jg4oA1pGbDu7bW06
+              - paragraph [ref=e875]: One payment. Right after checkout we invite your GitHub account to the private repository, so have your GitHub username ready.
+              - link "Try the web app" [ref=e876] [cursor=pointer]:
+                - /url: https://shipanysaas-demo.vercel.app/auth/sign-in?demo=1
+          - article [ref=e880]:
+            - generic [ref=e881]: Web + iOS + Android
+            - generic [ref=e882]:
+              - heading "All-in" [level=3] [ref=e883]
+              - paragraph [ref=e884]: For founders and agencies who need iOS and Android too.
+            - generic [ref=e885]:
+              - generic [ref=e886]:
+                - generic [ref=e887]: $99
+                - generic [ref=e888]: one-time
+                - generic [ref=e889]: Early-bird
+              - paragraph [ref=e890]: Then $249 after the first 100 customers.
+            - list [ref=e891]:
+              - listitem [ref=e892]:
+                - generic [ref=e895]: Everything in Starter
+              - listitem [ref=e896]:
+                - generic [ref=e899]: iPhone and iPad app
+              - listitem [ref=e900]:
+                - generic [ref=e903]: Android app
+              - listitem [ref=e904]:
+                - generic [ref=e907]: "Mac: the iPhone app can run on Apple silicon Macs"
+              - listitem [ref=e908]:
+                - generic [ref=e911]: One login and database for web and phone
+              - listitem [ref=e912]:
+                - generic [ref=e915]: Teams, roles and invites on the phone
+              - listitem [ref=e916]:
+                - generic [ref=e919]: Phone sign-ins stored encrypted
+              - listitem [ref=e920]:
+                - generic [ref=e923]: 7 more agent skills for the phone app
+            - generic [ref=e924]:
+              - link "Get All-in" [ref=e925] [cursor=pointer]:
+                - /url: https://buy.stripe.com/dRmbJ31nk9IU3xOfTK7bW08
+              - paragraph [ref=e928]: One payment. Right after checkout we invite your GitHub account to the private repository, so have your GitHub username ready.
+              - link "Try the phone app" [ref=e929] [cursor=pointer]:
+                - /url: https://shipanysaas-mobile-demo.vercel.app
+              - link "Already have Starter? Upgrade for $50" [ref=e932] [cursor=pointer]:
+                - /url: https://buy.stripe.com/28EdRb3vs3kw1pG22U7bW0a
+        - paragraph [ref=e933]: Prices in USD, paid once.
+      - region [ref=e934]:
+        - heading "Questions, answered." [level=2] [ref=e935]
+        - generic [ref=e936]:
+          - group [ref=e937]:
+            - generic [ref=e938] [cursor=pointer]:
+              - heading "What’s the difference between Starter and All-in?" [level=3] [ref=e939]
+              - generic [aria-hidden] [ref=e940]: +
+          - group [ref=e941]:
+            - generic [ref=e942] [cursor=pointer]:
+              - heading "Is it just a website template?" [level=3] [ref=e943]
+              - generic [aria-hidden] [ref=e944]: +
+          - group [ref=e945]:
+            - generic [ref=e946] [cursor=pointer]:
+              - heading "Why not build it myself with my agent?" [level=3] [ref=e947]
+              - generic [aria-hidden] [ref=e948]: +
+          - group [ref=e949]:
+            - generic [ref=e950] [cursor=pointer]:
+              - heading "Why this kit and not another starter kit?" [level=3] [ref=e951]
+              - generic [aria-hidden] [ref=e952]: +
+          - group [ref=e953]:
+            - generic [ref=e954] [cursor=pointer]:
+              - heading "Which coding agents work with it?" [level=3] [ref=e955]
+              - generic [aria-hidden] [ref=e956]: +
+          - group [ref=e957]:
+            - generic [ref=e958] [cursor=pointer]:
+              - heading "I’m not a developer. Can I use it?" [level=3] [ref=e959]
+              - generic [aria-hidden] [ref=e960]: +
+          - group [ref=e961]:
+            - generic [ref=e962] [cursor=pointer]:
+              - heading "What happens when my agent gets stuck?" [level=3] [ref=e963]
+              - generic [aria-hidden] [ref=e964]: +
+          - group [ref=e965]:
+            - generic [ref=e966] [cursor=pointer]:
+              - heading "One-time or subscription?" [level=3] [ref=e967]
+              - generic [aria-hidden] [ref=e968]: +
+          - group [ref=e969]:
+            - generic [ref=e970] [cursor=pointer]:
+              - heading "Can I build several products, or client projects?" [level=3] [ref=e971]
+              - generic [aria-hidden] [ref=e972]: +
+          - group [ref=e973]:
+            - generic [ref=e974] [cursor=pointer]:
+              - heading "Do I need a Mac for the phone app?" [level=3] [ref=e975]
+              - generic [aria-hidden] [ref=e976]: +
+          - group [ref=e977]:
+            - generic [ref=e978] [cursor=pointer]:
+              - heading "What does it cost to run?" [level=3] [ref=e979]
+              - generic [aria-hidden] [ref=e980]: +
+          - group [ref=e981]:
+            - generic [ref=e982] [cursor=pointer]:
+              - heading "How is it different from Lovable, Bolt or v0?" [level=3] [ref=e983]
+              - generic [aria-hidden] [ref=e984]: +
+          - group [ref=e985]:
+            - generic [ref=e986] [cursor=pointer]:
+              - heading "Can I get a refund?" [level=3] [ref=e987]
+              - generic [aria-hidden] [ref=e988]: +
+          - group [ref=e989]:
+            - generic [ref=e990] [cursor=pointer]:
+              - heading "Is my users’ data safe?" [level=3] [ref=e991]
+              - generic [aria-hidden] [ref=e992]: +
+          - group [ref=e993]:
+            - generic [ref=e994] [cursor=pointer]:
+              - heading "Is it certified, like SOC 2 or HIPAA?" [level=3] [ref=e995]
+              - generic [aria-hidden] [ref=e996]: +
+      - generic [ref=e998]:
+        - generic [ref=e999]:
+          - heading "You describe it. Your agent ships it." [level=2] [ref=e1000]:
+            - generic [ref=e1001]: You describe it.
+            - generic [ref=e1002]: Your agent ships it.
+          - paragraph [ref=e1003]: Start tonight with the agent you already use. Launch, then submit it to the showcase.
+          - generic [ref=e1004]:
+            - link "Get the kit" [ref=e1005] [cursor=pointer]:
+              - /url: /#pricing
+            - generic [ref=e1011]: From $49 once, no subscription
+            - link "Try the live demo first" [ref=e1012] [cursor=pointer]:
+              - /url: https://shipanysaas-demo.vercel.app/auth/sign-in?demo=1
+        - generic [ref=e1022]:
+          - generic [ref=e1023]: 9:41
+          - generic: Claude Code
+          - generic [ref=e1041]:
+            - generic [ref=e1042]: Today at 9:41 AM
+            - generic [ref=e1044]: you’re live ✅
+            - generic [ref=e1046]: list it on the showcase? people can find you there
+            - generic [ref=e1048]: yes please
+            - generic [ref=e1050]: done. live once it’s reviewed 🚀
+          - generic [ref=e1052]: Message
+    - contentinfo [ref=e1064]:
+      - link "Back to top" [ref=e1065] [cursor=pointer]:
+        - /url: "#top"
+        - generic [aria-hidden]: shipanysaas
+      - generic [ref=e1069]:
+        - generic [ref=e1070]:
+          - generic [ref=e1071]:
+            - link "shipanysaas" [ref=e1072] [cursor=pointer]:
+              - /url: /
+            - paragraph [ref=e1077]: "The SaaS starter kit for any coding agent: web, iOS and Android from one codebase."
+          - generic [ref=e1078]:
+            - generic [ref=e1079]:
+              - heading "About" [level=2] [ref=e1080]
+              - list [ref=e1081]:
+                - listitem [ref=e1082]:
+                  - link "Blog" [ref=e1083] [cursor=pointer]:
+                    - /url: /blog
+                - listitem [ref=e1084]:
+                  - link "Changelog" [ref=e1085] [cursor=pointer]:
+                    - /url: /changelog
+                - listitem [ref=e1086]:
+                  - link "Contact" [ref=e1087] [cursor=pointer]:
+                    - /url: /contact
+            - generic [ref=e1088]:
+              - heading "Product" [level=2] [ref=e1089]
+              - list [ref=e1090]:
+                - listitem [ref=e1091]:
+                  - link "Documentation" [ref=e1092] [cursor=pointer]:
+                    - /url: /docs
+                - listitem [ref=e1093]:
+                  - link "Pricing" [ref=e1094] [cursor=pointer]:
+                    - /url: /pricing
+                - listitem [ref=e1095]:
+                  - link "Components" [ref=e1096] [cursor=pointer]:
+                    - /url: /components
+                - listitem [ref=e1097]:
+                  - link "Showcase" [ref=e1098] [cursor=pointer]:
+                    - /url: /showcase
+                - listitem [ref=e1099]:
+                  - link "FAQ" [ref=e1100] [cursor=pointer]:
+                    - /url: /faq
+            - generic [ref=e1101]:
+              - heading "Resources" [level=2] [ref=e1102]
+              - list [ref=e1103]:
+                - listitem [ref=e1104]:
+                  - link "AGENTS.md generator" [ref=e1105] [cursor=pointer]:
+                    - /url: /tools/agents-md-generator
+                - listitem [ref=e1106]:
+                  - link "SaaS idea generator" [ref=e1107] [cursor=pointer]:
+                    - /url: /saas-ideas
+                - listitem [ref=e1108]:
+                  - link "Starter kit for Claude Code" [ref=e1109] [cursor=pointer]:
+                    - /url: /saas-starter-kit-for-claude-code
+                - listitem [ref=e1110]:
+                  - link "Next.js, Supabase and Expo" [ref=e1111] [cursor=pointer]:
+                    - /url: /nextjs-supabase-expo-starter-kit
+                - listitem [ref=e1112]:
+                  - link "SaaS with a mobile app" [ref=e1113] [cursor=pointer]:
+                    - /url: /saas-boilerplate-with-mobile-app
+                - listitem [ref=e1114]:
+                  - link "Codex vs Claude Code" [ref=e1115] [cursor=pointer]:
+                    - /url: /blog/codex-vs-claude-code
+                - listitem [ref=e1116]:
+                  - link "Supabase pricing" [ref=e1117] [cursor=pointer]:
+                    - /url: /blog/supabase-pricing
+                - listitem [ref=e1118]:
+                  - link "Compare kits" [ref=e1119] [cursor=pointer]:
+                    - /url: /compare
+            - generic [ref=e1120]:
+              - heading "Legal" [level=2] [ref=e1121]
+              - list [ref=e1122]:
+                - listitem [ref=e1123]:
+                  - link "Terms of service" [ref=e1124] [cursor=pointer]:
+                    - /url: /terms-of-service
+                - listitem [ref=e1125]:
+                  - link "Privacy policy" [ref=e1126] [cursor=pointer]:
+                    - /url: /privacy-policy
+                - listitem [ref=e1127]:
+                  - link "Cookie policy" [ref=e1128] [cursor=pointer]:
+                    - /url: /cookie-policy
+        - paragraph [ref=e1130]: © Copyright 2026 shipanysaas. All Rights Reserved.
+  - region "Notifications alt+T"
+  - alert [ref=e1133]

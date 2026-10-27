@@ -17,7 +17,10 @@ Rules for this file:
 - Frontend only. Backend lives in `atlas-ai-api` (NestJS, Better Auth, PostgreSQL), written by hand.
 - Never design database schemas or backend endpoints from this repo.
 - Package manager is npm (commit `package-lock.json`; CI uses `npm ci`). Node version is in `.nvmrc`.
-- Hosting: Vercel. `main` = production, `staging` = staging, PRs = previews. No Docker.
+- Hosting: Vercel. `main` = production, `integration` = integration preview, PRs = previews. No Docker.
+- shadcn style is `base-vega` (Base UI, not Radix): no `asChild`; composition uses the `render` prop.
+- `next.config.ts` has `cacheComponents` and `partialPrefetching` on. Env lives in `.env.local` (gitignored) and is read only via `lib/env.ts`; it throws at startup if `NEXT_PUBLIC_APP_URL` or `NEXT_PUBLIC_API_URL` is missing.
+- Robots meta is `index, follow` only when `VERCEL_ENV === "production"`.
 
 ## Conventions established
 
@@ -26,6 +29,20 @@ Rules for this file:
 - `lib/auth-client.ts` is the only network path that bypasses Axios.
 - Query keys come from per-feature factories in `features/<f>/hooks/query-keys.ts`.
 - Files are kebab-case; named exports except Next.js special files.
+- Use `next/link`, `next/image`, `next/font`, `next/script` instead of raw elements, after reading the installed Next.js docs; only exceptions are JSON-LD `<script>` and JSX inside `ImageResponse` (`AGENTS.md` §5).
+- shadcn first: no custom UI primitives, style shadcn components only via `className`/variants, never edit `src/components/ui/`, 21st.dev only via the shadcn registry (`AGENTS.md` §6).
+- Link styled as a button: `<Link className={cn(buttonVariants({ variant }), "...")}>`. Wrap in `cn()`: cva only appends `className` and does not resolve conflicts.
+- Type scale tokens: `text-display(-sm)`, `text-h1(-sm)`, `text-h2`, `text-h3`, `text-body-lg`, `text-caption`; widths `max-w-marketing` (980) and `max-w-marketing-wide` (1200).
+- Landing motion: wrap below-the-fold content in `Reveal` (LazyMotion + `m`). Never wrap the hero (LCP).
+- Palette: shadcn neutrals (black `#0a0a0a`) plus one brand hue: `brand` violet for brand moments, `brand-soft` lavender for panels and the headline highlight. Buttons stay near-black. Values and contrast live in `Design.md` §2.
+- Headlines: one phrase on `<Highlight>`; the heading must be `isolate`. Use `tone="card"` (white block) when the heading sits on a lavender panel. Never small violet text on lavender (4.27:1).
+- Font: Plus Jakarta Sans only (`--font-jakarta`), weights 400/500/600/800; JetBrains Mono for file names.
+- Status honesty: `StatusBadge` is solid (Available), secondary (In progress) or outline (Coming soon). Nothing is "Available" until it ships.
+- `--muted-foreground` is oklch(0.5), darker than the shadcn default, so muted text passes on muted and lavender too (5.5 / 5.2).
+- Concept mocks are illustrations: wrap them in `inert` (hides from AT and removes focus, so shadcn `Input`/`Button` are allowed inside), label the window "Concept" and add a visible caption.
+- Do not describe the project as open source anywhere in the copy (owner request, 2026-10-26).
+- All landing copy lives in typed files under `src/features/landing/data/`; footer links live in `src/data/site.ts`.
+- Type token `text-display-lg` (72/76) is for the landing hero at `lg`+ only.
 
 ## API contracts known so far
 
@@ -43,14 +60,48 @@ _Things that broke or surprised you, and the fix. Format: `YYYY-MM-DD — proble
 - 2026-10-26 — Cross-site cookies between `*.vercel.app` and a separately hosted API will
   break Better Auth sessions → decide same-site domains, a Next.js proxy or bearer tokens
   before auth work (`TRD.md` §5).
+- 2026-10-26 — Base UI `<Button render={<Link/>} nativeButton={false}>` adds `role="button"` to the `<a>` (links announced as buttons) → use `buttonVariants` on `<Link>` (shadcn Base UI docs).
+- 2026-10-26 — The `cn` package has no config and does not know custom `text-*` tokens: next to `text-sm` the base size wins, next to a color `text-caption` is dropped → never pass custom type tokens through `cn()` onto shadcn components; use them on plain elements.
+- 2026-10-26 — Cache Components fails the build on `new Date()` during prerender → footer year lives in an async `"use cache"` component with `cacheLife("days")` (`layouts/current-year.tsx`).
+- 2026-10-26 — Theme tokens must not be `none` for shadows: Tailwind composes ring + shadow into one `box-shadow`, so `none` kills rings too → use `0 0 #0000`.
+- 2026-10-26 — `useReducedMotion()` is `null` on the server → keep `initial` identical and change only the transition, or hydration mismatches.
+- 2026-10-26 — `npm install` while `next dev` runs left Turbopack serving stale CSS → restart the dev server after installing. Only one `next dev` per project directory is allowed.
+- 2026-10-26 — Next 16 `Image`: `priority` is deprecated, use `preload`.
+- 2026-10-26 — shadcn `SheetContent` close button is 32px → `showCloseButton={false}` plus a 44px `SheetClose`.
+- 2026-10-26 — `next/dynamic` only code-splits when called from a Client Component, and a trigger outside the lazy chunk loses Base UI focus return → pass `finalFocus={triggerRef}` to `SheetContent` (`layouts/marketing-mobile-nav.tsx`).
+- 2026-10-26 — Next dev fetches dynamic chunks eagerly; check lazy loading against `next build` output, not `next dev`.
+- 2026-10-26 — A dashed card (`border`) sits 1px lower than a ring-only card → give solid cards `border border-transparent` when they share a row.
+- 2026-10-26 — Playwright theme screenshots: next-themes reads `localStorage.theme` before `prefers-color-scheme` → set `localStorage.theme` and reload instead of emulating media.
+- 2026-10-26 — `next dev` re-adds its managed rules block at the top of `AGENTS.md` → expected; keep it.
+- 2026-10-26 — A CSS grid without explicit columns sizes its implicit column to the widest content, so a wide mock overflowed the page at 390px → `grid-cols-1` plus `min-w-0` on the child.
+- 2026-10-26 — A `mask-image` fade also hides children → put masked backgrounds on their own `aria-hidden` layer, never on a content wrapper.
+- 2026-10-26 — Headline wrapped to 3 lines in the fallback font and 4 in Inter Tight, a 0.039 CLS on mobile → render each sentence as its own `block` span (`heroContent.titleLines`).
+- 2026-10-26 — shadcn `Tabs`/`Accordion` files are client modules, so Server Components can render them directly with server children; no wrapper needed. `TabsContent keepMounted` and `AccordionContent hiddenUntilFound` keep inactive content in the HTML (closed accordion panels are server-rendered with plain `hidden`).
+- 2026-10-26 — A tab list whose labels are wider than the column stretches the whole `Tabs` block past the page padding → `min-w-0` on `Tabs`, `overflow-x-auto` on `TabsList`, small trigger padding on mobile.
+- 2026-10-26 — `git mv -k` silently skips untracked files → use `mv` for files not yet committed.
+- 2026-10-27 — An inline highlight background is taller than a tight line-height and painted over the line above, clipping descenders → `relative -z-10` on the highlight and `isolate` on the heading.
+- 2026-10-27 — shadcn `TabsList` sets `group-data-horizontal/tabs:h-9`, which beats a plain `h-auto`; wrapped tab rows then overlap the panel → add `group-data-horizontal/tabs:h-auto`.
+- 2026-10-27 — Playwright sometimes returns a blank frame right after a long scroll or reload → re-take the screenshot before concluding the page is broken.
+- 2026-10-27 — CI failed with `Cannot find name LayoutProps`: route types (`LayoutProps`, `PageProps`) are generated into `.next/types` by `next dev`/`next build`, and CI typechecks before building on a clean checkout → `typecheck` script is `next typegen && tsc --noEmit`. Locally it passed only because `.next` already existed.
+- 2026-10-26 — Base UI tabs use manual activation: arrow keys move focus, Enter/Space selects. Expected ARIA behaviour, not a bug.
+- 2026-10-26 — `next dev` was killed for low system memory (~1.6 GB free) → verify with `next build` + `next start` (lighter) and stop it afterwards.
 
 ## Component and pattern inventory
 
 _What exists and where, so nothing gets built twice._
 
-| Component / pattern | Location | Notes |
-| ------------------- | -------- | ----- |
-| —                   | —        | —     |
+| Component / pattern                                                        | Location                                        | Notes                                                   |
+| -------------------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------- |
+| `MarketingLayout` (header, mobile sheet nav, footer)                       | `src/layouts/marketing/`                        | Sheet panel lazy-loaded (`marketing-mobile-sheet.tsx`)  |
+| `ThemeToggle`                                                              | `src/components/common/theme-toggle.tsx`        | Client; light/dark via `next-themes`                    |
+| `Reveal`                                                                   | `src/features/landing/components/reveal.tsx`    | Client motion wrapper, `as="div"                        | "li"`, `index` staggers |
+| One component per landing section                                          | `src/features/landing/components/*-section.tsx` | Exported from `src/features/landing/index.ts`           |
+| `Highlight`, `SectionHeading`, `CheckItem`, `StatusBadge`, `ProductWindow` | `src/features/landing/components/`              | Landing building blocks                                 |
+| Concept mocks: `ChatBubble`, `NotificationCard`, `CitationChip`            | `src/features/landing/components/mocks/`        | Render inside `inert`                                   |
+| `LogoMark` (violet app-icon tile)                                          | `src/components/common/logo-mark.tsx`           | Header, footer, notification cards                      |
+| Footer columns                                                             | `src/data/site.ts` (`footerColumns`)            | Typed `FooterColumn` in `src/types/site.ts`             |
+| Site config and nav links                                                  | `src/data/site.ts`                              | Used by metadata, layouts and JSON-LD                   |
+| JSON-LD builder                                                            | `src/features/landing/helpers/build-json-ld.ts` | `schema-dts` `Graph`; rendered in `app/(root)/page.tsx` |
 
 ## Open questions
 
@@ -58,3 +109,7 @@ _What exists and where, so nothing gets built twice._
 - Ownership of email templates (web vs API repo)
 - Public demo limits before sharing the live URL
 - Repository license
+- First-load JS is 225.1 KB against the revised ~200 KB budget (PROGRESS B-1)
+- Roadmap stages 6–8 have no names in `PRD.md` yet; the landing shows stages 1–5, with stage 5 grouping the rest
+- shadcn default focus ring (1.54:1 light) and `--input` (1.26:1) fail 3:1; fix before the first form (`Design.md` §2)
+- ADR links point to `sessions/adr` on `main`; they 404 until those files are pushed
