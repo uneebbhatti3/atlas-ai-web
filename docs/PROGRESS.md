@@ -30,7 +30,7 @@ Newest entries go at the top of each section.
 
 ## ⏭️ Next up
 
-1. Landing follow-ups: `opengraph-image.tsx`, `sitemap.ts`, `robots.ts`, `manifest.ts`, apple-touch-icon
+1. Landing follow-ups: `opengraph-image.tsx`, apple-touch-icon and 192/512 PNG manifest icons (`robots.ts`, `sitemap.ts`, `manifest.ts`, `llms.txt`, `ads.txt`, `security.txt` done 2026-10-27)
 2. Run `create-next-app` and apply the scaffold
 3. GitHub rulesets and Vercel setup
 4. Phase 1: Foundations

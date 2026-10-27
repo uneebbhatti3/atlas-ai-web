@@ -22,6 +22,7 @@ Rules for this file:
 - `next.config.ts` has `cacheComponents` and `partialPrefetching` on. Env lives in `.env.local` (gitignored) and is read only via `lib/env.ts`; it throws at startup if `NEXT_PUBLIC_APP_URL` or `NEXT_PUBLIC_API_URL` is missing.
 - Robots meta is `index, follow` only when `VERCEL_ENV === "production"`.
 - Microsoft Clarity loads from `components/common/clarity-script.tsx` via `next/script`, only in production and only when `NEXT_PUBLIC_CLARITY_PROJECT_ID` is set (optional, so missing it never breaks a build).
+- Crawler files: `robots.ts` blocks everything outside production and lists the auth/app routes as disallowed; add new public pages to `sitemap.ts`. `llms.txt` is a route handler built from `siteConfig` + landing FAQ. `public/.well-known/security.txt` has `Expires: 2027-10-27`; renew it before then (RFC 9116 makes an expired file invalid).
 
 ## Conventions established
 

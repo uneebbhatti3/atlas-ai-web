@@ -1,0 +1,3 @@
+# Atlas AI does not sell ad inventory. This placeholder record (IAB ads.txt 1.1) declares that
+# no seller is authorised, so nobody can resell this domain's inventory.
+placeholder.example.com, placeholder, DIRECT, placeholder
