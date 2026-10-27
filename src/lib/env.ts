@@ -28,6 +28,8 @@ function parseVercelEnv(value: string | undefined): VercelEnv | undefined {
 export const env = {
   NEXT_PUBLIC_APP_URL: requireUrl("NEXT_PUBLIC_APP_URL", process.env.NEXT_PUBLIC_APP_URL),
   NEXT_PUBLIC_API_URL: requireUrl("NEXT_PUBLIC_API_URL", process.env.NEXT_PUBLIC_API_URL),
+  // Optional: Microsoft Clarity is skipped when this is not set.
+  NEXT_PUBLIC_CLARITY_PROJECT_ID: process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || undefined,
   VERCEL_ENV: parseVercelEnv(process.env.VERCEL_ENV),
 } as const;
 
