@@ -1,19 +1,10 @@
 import type { LucideIcon } from "lucide-react";
 
-/** Shown without colour: solid, secondary fill, outline (Design.md §2). */
-export type BuildStatus = "available" | "in-progress" | "coming-soon";
+export type { FaqItem, SectionIntro } from "@/types/marketing";
 
 export interface CallToAction {
   label: string;
   href: string;
-}
-
-/** A section heading: plain words, then the phrase that sits on the highlight block. */
-export interface SectionIntro {
-  eyebrow?: string;
-  title: string;
-  highlight?: string;
-  description: string;
 }
 
 export interface HeroContent {
@@ -25,9 +16,18 @@ export interface HeroContent {
   description: string;
   primaryCta: CallToAction;
   secondaryCta: CallToAction;
-  note: string;
   demoLabel: string;
   mockCaption: string;
+}
+
+export interface HeroVideo {
+  src: string;
+  poster: string;
+  /** Seconds. With `preload="none"` the browser only learns this after play is pressed. */
+  duration: number;
+  /** Accessible name for the player. */
+  label: string;
+  caption: string;
 }
 
 export type DemoId = "organize" | "search" | "ask" | "research";
@@ -36,7 +36,6 @@ export interface HeroDemo {
   id: DemoId;
   label: string;
   icon: LucideIcon;
-  status: BuildStatus;
   breadcrumb: string[];
   question: string;
   answer: string;
@@ -47,7 +46,6 @@ export interface HierarchyTile {
   name: string;
   caption: string;
   icon: LucideIcon;
-  status: BuildStatus;
   tone: "ink" | "brand";
 }
 
@@ -62,7 +60,6 @@ export interface ExplorerTab {
   id: ExplorerId;
   label: string;
   icon: LucideIcon;
-  status: BuildStatus;
   title: string;
   description: string;
   checklist: string[];
@@ -76,19 +73,6 @@ export interface ChecklistPoint {
 export interface HowItWorksStep {
   title: string;
   description: string;
-}
-
-export interface RoadmapStage {
-  stage: string;
-  title: string;
-  description: string;
-  status: BuildStatus;
-}
-
-export interface FaqItem {
-  id: string;
-  question: string;
-  answer: string;
 }
 
 /* Illustrative mock data for concept visuals. Not live data and not an API contract. */

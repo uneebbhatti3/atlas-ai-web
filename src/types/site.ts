@@ -19,7 +19,9 @@ export interface SiteConfig {
 
 export interface NavLink {
   label: string;
-  href: `#${string}`;
+  href: string;
+  /** Used instead of `href` away from the landing page, when the link has its own route. */
+  offLandingHref?: string;
 }
 
 export interface FooterLink {

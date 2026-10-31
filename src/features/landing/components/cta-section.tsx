@@ -1,6 +1,8 @@
 import { ArrowRightIcon, StarIcon } from "lucide-react";
 import Link from "next/link";
 
+import { Reveal } from "@/components/common/reveal";
+import { SectionHeading } from "@/components/common/section-heading";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -8,8 +10,6 @@ import { finalCta, heroDemos } from "../data/hero";
 import { ChatBubble } from "./mocks/chat-bubble";
 import { CitationChip } from "./mocks/citation-chip";
 import { ProductWindow } from "./product-window";
-import { Reveal } from "./reveal";
-import { SectionHeading } from "./section-heading";
 
 export function CtaSection() {
   const demo = heroDemos[0];
@@ -29,10 +29,11 @@ export function CtaSection() {
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants(),
-                "h-14 w-full gap-3 rounded-full pr-6 pl-2 text-base shadow-lg sm:w-auto",
+                "relative h-14 w-full gap-3 rounded-full pr-6 pl-15 text-base shadow-lg sm:w-auto",
               )}
             >
-              <span className="flex size-10 items-center justify-center rounded-full bg-brand text-brand-foreground">
+              {/* Pinned to the left edge so the label stays centred when the button is full width. */}
+              <span className="absolute top-1/2 left-2 flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-brand text-brand-foreground">
                 <StarIcon aria-hidden className="size-4" strokeWidth={2} />
               </span>
               {finalCta.primary.label}

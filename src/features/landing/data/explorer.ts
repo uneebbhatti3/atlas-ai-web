@@ -11,7 +11,7 @@ import type { ExplorerTab, SectionIntro } from "../types";
 export const explorerIntro: SectionIntro = {
   title: "Everything inside,",
   highlight: "one workspace.",
-  description: "Pick a part of Atlas to see what it does. Each one shows its real status today.",
+  description: "Pick a part of Atlas to see what it does.",
 };
 
 export const explorerTabs: ExplorerTab[] = [
@@ -19,7 +19,6 @@ export const explorerTabs: ExplorerTab[] = [
     id: "organize",
     label: "Organize",
     icon: FolderTreeIcon,
-    status: "in-progress",
     title: "Every note in its place",
     description:
       "A workspace for each area of your work, projects inside it and Markdown documents inside those.",
@@ -36,7 +35,6 @@ export const explorerTabs: ExplorerTab[] = [
     id: "process",
     label: "Process",
     icon: FileCogIcon,
-    status: "coming-soon",
     title: "Files in, knowledge out",
     description:
       "Upload a file and follow it from pending to ready, so the work behind the scenes stays visible.",
@@ -51,7 +49,6 @@ export const explorerTabs: ExplorerTab[] = [
     id: "search",
     label: "Search",
     icon: SearchIcon,
-    status: "coming-soon",
     title: "Find it by meaning",
     description: "Describe what you remember in your own words and get the passage that matches.",
     checklist: [
@@ -65,7 +62,6 @@ export const explorerTabs: ExplorerTab[] = [
     id: "ask",
     label: "Ask",
     icon: MessageSquareQuoteIcon,
-    status: "coming-soon",
     title: "Answers you can check",
     description: "Ask in plain language and get an answer built only from your own documents.",
     checklist: [
@@ -79,7 +75,6 @@ export const explorerTabs: ExplorerTab[] = [
     id: "research",
     label: "Research",
     icon: NotebookPenIcon,
-    status: "coming-soon",
     title: "From sources to a report",
     description: "Choose the sources and a question, and get a structured draft to edit.",
     checklist: [

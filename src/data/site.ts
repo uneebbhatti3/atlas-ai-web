@@ -6,8 +6,8 @@ export const siteConfig: SiteConfig = {
   name: "Atlas AI",
   title: "Atlas AI: Your documents, organized and answerable",
   description:
-    "Atlas AI organizes your documents into a knowledge base you can search by meaning and question with cited answers. An engineering lab, built in public.",
-  tagline: "An AI knowledge and research workspace, built in public.",
+    "Atlas AI organizes your documents into a knowledge base you can search by meaning and question with cited answers. An engineering lab.",
+  tagline: "An AI knowledge and research workspace.",
   keywords: [
     "Atlas AI",
     "knowledge workspace",
@@ -29,20 +29,20 @@ export const siteConfig: SiteConfig = {
 };
 
 export const marketingNavLinks: NavLink[] = [
-  { label: "Features", href: "#features" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Roadmap", href: "#roadmap" },
+  { label: "Features", href: "/#features" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Pricing", href: "#pricing", offLandingHref: "/pricing" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export const footerColumns: FooterColumn[] = [
   {
     title: "Product",
     links: [
-      { label: "Features", href: "#features" },
-      { label: "How it works", href: "#how-it-works" },
-      { label: "Roadmap", href: "#roadmap" },
-      { label: "FAQ", href: "#faq" },
+      { label: "Features", href: "/#features" },
+      { label: "How it works", href: "/#how-it-works" },
+      { label: "Pricing", href: "/pricing" },
+      { label: "FAQ", href: "/#faq" },
     ],
   },
   {
