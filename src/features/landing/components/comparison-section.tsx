@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/common/reveal";
+import { SectionHeading } from "@/components/common/section-heading";
 import { cn } from "@/lib/utils";
 
 import {
@@ -8,8 +10,6 @@ import {
   withoutAtlasItems,
 } from "../data/showcase";
 import { NotificationCard } from "./mocks/notification-card";
-import { Reveal } from "./reveal";
-import { SectionHeading } from "./section-heading";
 
 const tilts = ["-rotate-2", "rotate-1", "-rotate-1"] as const;
 

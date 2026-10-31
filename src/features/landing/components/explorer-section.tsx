@@ -1,11 +1,10 @@
+import { CheckItem } from "@/components/common/check-item";
+import { Reveal } from "@/components/common/reveal";
+import { SectionHeading } from "@/components/common/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { explorerIntro, explorerTabs } from "../data/explorer";
-import { CheckItem } from "./check-item";
-import { Reveal } from "./reveal";
-import { SectionHeading } from "./section-heading";
-import { StatusBadge } from "./status-badge";
 
 export function ExplorerSection() {
   return (
@@ -41,7 +40,6 @@ export function ExplorerSection() {
           <TabsContent key={tab.id} value={tab.id} keepMounted>
             <div className="grid grid-cols-1 items-center gap-8 rounded-3xl bg-brand-soft p-6 md:min-h-104 md:p-12 lg:grid-cols-5 lg:gap-12">
               <div className="flex flex-col gap-4 lg:col-span-2">
-                <StatusBadge status={tab.status} className="self-start" />
                 <h3 className="font-heading text-h1-sm text-balance">{tab.title}</h3>
                 <p className="text-body-lg text-pretty text-muted-foreground">{tab.description}</p>
               </div>

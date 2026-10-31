@@ -3,7 +3,7 @@ import type { FaqItem, SectionIntro } from "../types";
 export const faqIntro: SectionIntro = {
   title: "Questions,",
   highlight: "answered.",
-  description: "Straight answers about what Atlas is, what works today and what comes next.",
+  description: "Straight answers about what Atlas is and how it works.",
 };
 
 export const faqItems: FaqItem[] = [
@@ -14,10 +14,10 @@ export const faqItems: FaqItem[] = [
       "Atlas AI is a knowledge and research workspace. You organize documents into workspaces and projects, and Atlas turns them into a knowledge base you can search by meaning and question with cited answers.",
   },
   {
-    id: "free",
-    question: "Is it free?",
+    id: "pricing",
+    question: "Will Atlas have paid plans?",
     answer:
-      "Atlas has no paid plan. A public demo is planned; it will have usage limits so it stays affordable to run, and those limits are still being decided.",
+      "Yes. Atlas has a Free plan and a paid Pro plan. Paid plans are not live yet; the pricing section has the details.",
   },
   {
     id: "private",
@@ -28,8 +28,7 @@ export const faqItems: FaqItem[] = [
   {
     id: "file-types",
     question: "Which file types are supported?",
-    answer:
-      "Today Atlas works with plain text and Markdown documents. File uploads with processing arrive in stage 2, and the supported formats will be listed when it ships.",
+    answer: "Atlas works with plain text and Markdown documents.",
   },
   {
     id: "citations",
@@ -44,15 +43,9 @@ export const faqItems: FaqItem[] = [
       "Atlas is a personal project for learning production engineering in depth. The NestJS backend is written by hand, AI helps with the interface, and every significant decision is recorded as an Architecture Decision Record.",
   },
   {
-    id: "sign-ups",
-    question: "When do sign-ups open?",
-    answer:
-      "Accounts are part of stage 1, which is in progress. There is no date yet; star the repository or connect on LinkedIn to hear when sign-ups open.",
-  },
-  {
     id: "follow",
-    question: "How can I follow progress?",
+    question: "How can I follow Atlas?",
     answer:
-      "Star the GitHub repository to see every change, read the decision records in the repository, or connect on LinkedIn for updates.",
+      "Star the GitHub repository, read the decision records in the repository, or connect on LinkedIn for updates.",
   },
 ];

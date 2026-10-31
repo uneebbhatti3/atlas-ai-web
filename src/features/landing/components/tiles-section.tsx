@@ -1,9 +1,8 @@
+import { Reveal } from "@/components/common/reveal";
+import { SectionHeading } from "@/components/common/section-heading";
 import { cn } from "@/lib/utils";
 
 import { hierarchyTiles, tilesIntro } from "../data/showcase";
-import { Reveal } from "./reveal";
-import { SectionHeading } from "./section-heading";
-import { StatusBadge } from "./status-badge";
 
 export function TilesSection() {
   return (
@@ -43,7 +42,6 @@ export function TilesSection() {
                   {tile.name}
                 </h3>
                 <p className="text-sm text-muted-foreground">{tile.caption}</p>
-                <StatusBadge status={tile.status} />
               </div>
             </Reveal>
           );

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-import type { SectionIntro } from "../types";
+import type { SectionIntro } from "@/types/marketing";
 import { Highlight } from "./highlight";
 
 interface SectionHeadingProps {

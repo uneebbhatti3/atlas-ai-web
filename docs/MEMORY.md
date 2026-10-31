@@ -39,12 +39,18 @@ Rules for this file:
 - Palette: shadcn neutrals (black `#0a0a0a`) plus one brand hue: `brand` violet for brand moments, `brand-soft` lavender for panels and the headline highlight. Buttons stay near-black. Values and contrast live in `Design.md` §2.
 - Headlines: one phrase on `<Highlight>`; the heading must be `isolate`. Use `tone="card"` (white block) when the heading sits on a lavender panel. Never small violet text on lavender (4.27:1).
 - Font: Plus Jakarta Sans only (`--font-jakarta`), weights 400/500/600/800; JetBrains Mono for file names.
-- Status honesty: `StatusBadge` is solid (Available), secondary (In progress) or outline (Coming soon). Nothing is "Available" until it ships.
+- Public copy never reveals build status or plans: no "In progress"/"Coming soon" labels, no roadmap, stages, "built in public" or future tense about features (owner request, 2026-10-30). Exception (2026-10-31): pricing may say "Coming soon" on plan CTAs, "Coming later" for agents, integrations and Team, and that paid plans are not live.
+- Plans have one source of truth: every plan, price, limit and feature lives in `src/features/pricing/data/plans.ts`; no numbers in JSX. The frontend only displays limits; the backend enforces them.
+- Plan CTAs stay disabled "Coming soon" until billing is live. `Plan.cta.disabled` is the literal `true` on purpose. No "Most popular", fake counts or testimonials.
+- Marketing nav links use `/#section` so they work from `/pricing`; `MarketingNavLink` swaps a link for `offLandingHref` away from `/`.
 - `--muted-foreground` is oklch(0.5), darker than the shadcn default, so muted text passes on muted and lavender too (5.5 / 5.2).
-- Concept mocks are illustrations: wrap them in `inert` (hides from AT and removes focus, so shadcn `Input`/`Button` are allowed inside), label the window "Concept" and add a visible caption.
+- Mocks are illustrations: wrap them in `inert` (hides from AT and removes focus, so shadcn `Input`/`Button` are allowed inside), label the window "Example" and add a visible caption.
 - Do not describe the project as open source anywhere in the copy (owner request, 2026-10-26).
 - All landing copy lives in typed files under `src/features/landing/data/`; footer links live in `src/data/site.ts`.
 - Type token `text-display-lg` (72/76) is for the landing hero at `lg`+ only.
+- Next.js has no video component, so raw `<video>` is the documented choice. Hero video stays `preload="none"` with a poster, then autoplays once 25% is in view (owner request, 2026-10-30), never with reduced motion. It tries sound at 100% first and falls back to muted when the browser blocks it; the volume slider stays at 100% either way. Paths and duration live in `heroVideo` (`data/hero.ts`); update `duration` if the file changes.
+- Native video controls cannot be recoloured, so `HeroVideoPlayer` draws its own from shadcn `Button` and `Slider`. Colour is `--brand-player` (`#5E56FA`), kept separate from `--brand` (`#6355FF`) and used only there.
+- shadcn `Slider` exposes only a root `className`: style parts with `**:data-[slot=slider-range]:...`, and name it with `aria-labelledby` on the root (Base UI forwards it to the thumb's input).
 
 ## API contracts known so far
 
@@ -85,6 +91,7 @@ _Things that broke or surprised you, and the fix. Format: `YYYY-MM-DD — proble
 - 2026-10-27 — shadcn `TabsList` sets `group-data-horizontal/tabs:h-9`, which beats a plain `h-auto`; wrapped tab rows then overlap the panel → add `group-data-horizontal/tabs:h-auto`.
 - 2026-10-27 — Playwright sometimes returns a blank frame right after a long scroll or reload → re-take the screenshot before concluding the page is broken.
 - 2026-10-27 — CI failed with `Cannot find name LayoutProps`: route types (`LayoutProps`, `PageProps`) are generated into `.next/types` by `next dev`/`next build`, and CI typechecks before building on a clean checkout → `typecheck` script is `next typegen && tsc --noEmit`. Locally it passed only because `.next` already existed.
+- 2026-10-30 — Turbopack missed a second quick edit to `globals.css`, leaving a new token undefined and its colour transparent → make a real content change to recompile; `touch` does nothing because it watches content.
 - 2026-10-26 — Base UI tabs use manual activation: arrow keys move focus, Enter/Space selects. Expected ARIA behaviour, not a bug.
 - 2026-10-26 — `next dev` was killed for low system memory (~1.6 GB free) → verify with `next build` + `next start` (lighter) and stop it afterwards.
 
@@ -92,26 +99,29 @@ _Things that broke or surprised you, and the fix. Format: `YYYY-MM-DD — proble
 
 _What exists and where, so nothing gets built twice._
 
-| Component / pattern                                                        | Location                                        | Notes                                                   |
-| -------------------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------- |
-| `MarketingLayout` (header, mobile sheet nav, footer)                       | `src/layouts/marketing/`                        | Sheet panel lazy-loaded (`marketing-mobile-sheet.tsx`)  |
-| `ThemeToggle`                                                              | `src/components/common/theme-toggle.tsx`        | Client; light/dark via `next-themes`                    |
-| `Reveal`                                                                   | `src/features/landing/components/reveal.tsx`    | Client motion wrapper, `as="div"                        | "li"`, `index` staggers |
-| One component per landing section                                          | `src/features/landing/components/*-section.tsx` | Exported from `src/features/landing/index.ts`           |
-| `Highlight`, `SectionHeading`, `CheckItem`, `StatusBadge`, `ProductWindow` | `src/features/landing/components/`              | Landing building blocks                                 |
-| Concept mocks: `ChatBubble`, `NotificationCard`, `CitationChip`            | `src/features/landing/components/mocks/`        | Render inside `inert`                                   |
-| `LogoMark` (violet app-icon tile)                                          | `src/components/common/logo-mark.tsx`           | Header, footer, notification cards                      |
-| Footer columns                                                             | `src/data/site.ts` (`footerColumns`)            | Typed `FooterColumn` in `src/types/site.ts`             |
-| Site config and nav links                                                  | `src/data/site.ts`                              | Used by metadata, layouts and JSON-LD                   |
-| JSON-LD builder                                                            | `src/features/landing/helpers/build-json-ld.ts` | `schema-dts` `Graph`; rendered in `app/(root)/page.tsx` |
+| Component / pattern                                             | Location                                        | Notes                                                       |
+| --------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
+| `MarketingLayout` (header, mobile sheet nav, footer)            | `src/layouts/marketing/`                        | Sheet panel lazy-loaded (`marketing-mobile-sheet.tsx`)      |
+| `ThemeToggle`                                                   | `src/components/common/theme-toggle.tsx`        | Client; light/dark via `next-themes`                        |
+| `Reveal`                                                        | `src/components/common/reveal.tsx`              | Client motion wrapper, `as="div"                            | "li"`, `index` staggers |
+| One component per landing section                               | `src/features/landing/components/*-section.tsx` | Exported from `src/features/landing/index.ts`               |
+| `Highlight`, `SectionHeading`, `CheckItem`, `FaqAccordion`      | `src/components/common/`                        | Promoted when pricing became the second feature to use them |
+| `ProductWindow`                                                 | `src/features/landing/components/`              | Landing building block                                      |
+| `BillingTabs`, `PlanCard`, `ComparisonTable`, `PricingSection`  | `src/features/pricing/components/`              | Exported from `src/features/pricing/index.ts`               |
+| Concept mocks: `ChatBubble`, `NotificationCard`, `CitationChip` | `src/features/landing/components/mocks/`        | Render inside `inert`                                       |
+| `LogoMark` (violet app-icon tile)                               | `src/components/common/logo-mark.tsx`           | Header, footer, notification cards                          |
+| Footer columns                                                  | `src/data/site.ts` (`footerColumns`)            | Typed `FooterColumn` in `src/types/site.ts`                 |
+| Site config and nav links                                       | `src/data/site.ts`                              | Used by metadata, layouts and JSON-LD                       |
+| JSON-LD builder                                                 | `src/features/landing/helpers/build-json-ld.ts` | `schema-dts` `Graph`; rendered in `app/(root)/page.tsx`     |
 
 ## Open questions
 
+- TODO: add Pro `Offer` structured data when billing launches. Until then JSON-LD keeps only the free offer.
 - Cookie strategy (`TRD.md` §5)
 - Ownership of email templates (web vs API repo)
 - Public demo limits before sharing the live URL
 - Repository license
 - First-load JS is 225.1 KB against the revised ~200 KB budget (PROGRESS B-1)
-- Roadmap stages 6–8 have no names in `PRD.md` yet; the landing shows stages 1–5, with stage 5 grouping the rest
 - shadcn default focus ring (1.54:1 light) and `--input` (1.26:1) fail 3:1; fix before the first form (`Design.md` §2)
 - ADR links point to `sessions/adr` on `main`; they 404 until those files are pushed
+- Hero promo video needs a captions `.vtt` if it has speech (AGENTS.md accessibility); consider compressing it or moving it to Vercel Blob

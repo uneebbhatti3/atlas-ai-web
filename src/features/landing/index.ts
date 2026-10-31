@@ -5,7 +5,6 @@ export { FaqSection } from "./components/faq-section";
 export { HeroSection } from "./components/hero-section";
 export { HowItWorksSection } from "./components/how-it-works-section";
 export { PrivacySection } from "./components/privacy-section";
-export { RoadmapSection } from "./components/roadmap-section";
 export { TilesSection } from "./components/tiles-section";
 export { buildLandingJsonLd } from "./helpers/build-json-ld";
 export { buildLlmsTxt } from "./helpers/build-llms-txt";

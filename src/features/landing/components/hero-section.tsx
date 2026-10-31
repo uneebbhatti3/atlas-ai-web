@@ -1,16 +1,16 @@
 import { ArrowRightIcon, StarIcon } from "lucide-react";
 import Link from "next/link";
 
+import { Highlight } from "@/components/common/highlight";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 import { heroContent } from "../data/hero";
 import { HeroDemo } from "./hero-demo";
-import { Highlight } from "./highlight";
+import { HeroVideo } from "./hero-video";
 
 export function HeroSection() {
-  const { titleLine, secondLine, highlight, description, primaryCta, secondaryCta, note } =
-    heroContent;
+  const { titleLine, secondLine, highlight, description, primaryCta, secondaryCta } = heroContent;
 
   // Not animated: the headline and the demo are the LCP candidates and must paint straight from
   // the server HTML.
@@ -60,9 +60,9 @@ export function HeroSection() {
             {secondaryCta.label}
           </Link>
         </div>
-        <p className="text-sm text-muted-foreground">{note}</p>
       </div>
 
+      <HeroVideo />
       <HeroDemo />
     </section>
   );

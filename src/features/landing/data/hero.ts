@@ -2,7 +2,14 @@ import { FolderTreeIcon, MessageSquareQuoteIcon, NotebookPenIcon, SearchIcon } f
 
 import { siteConfig } from "@/data/site";
 
-import type { CallToAction, HeroContent, HeroDemo, MockNotification, SectionIntro } from "../types";
+import type {
+  CallToAction,
+  HeroContent,
+  HeroDemo,
+  HeroVideo,
+  MockNotification,
+  SectionIntro,
+} from "../types";
 
 export const heroContent: HeroContent = {
   titleLine: "Ask your own research.",
@@ -12,9 +19,16 @@ export const heroContent: HeroContent = {
     "Atlas turns your workspaces, projects and documents into a knowledge base you can search by meaning and question with cited answers.",
   primaryCta: { label: "Star on GitHub", href: siteConfig.repositoryUrl },
   secondaryCta: { label: "See how it works", href: "#how-it-works" },
-  note: "Built in public. Stage 1 is in progress.",
   demoLabel: "Try a question:",
-  mockCaption: "Concept preview. Atlas is in development; this shows where it is heading.",
+  mockCaption: "Example conversations.",
+};
+
+export const heroVideo: HeroVideo = {
+  src: "/atlas-ai-promo.mp4",
+  poster: "/atlas-ai-promo-poster.webp",
+  duration: 72,
+  label: "Atlas AI product walkthrough",
+  caption: "Product walkthrough.",
 };
 
 // The hero demo: one conversation per capability, switched by the chips above the window.
@@ -23,7 +37,6 @@ export const heroDemos: HeroDemo[] = [
     id: "ask",
     label: "Ask",
     icon: MessageSquareQuoteIcon,
-    status: "coming-soon",
     breadcrumb: ["Systems research", "Ask Atlas"],
     question: "When should I prefer write-through over TTL expiry?",
     answer:
@@ -45,7 +58,6 @@ export const heroDemos: HeroDemo[] = [
     id: "search",
     label: "Search",
     icon: SearchIcon,
-    status: "coming-soon",
     breadcrumb: ["Systems research", "Search"],
     question: "Find where I wrote about keeping a cache consistent.",
     answer:
@@ -67,7 +79,6 @@ export const heroDemos: HeroDemo[] = [
     id: "organize",
     label: "Organize",
     icon: FolderTreeIcon,
-    status: "in-progress",
     breadcrumb: ["Systems research", "Distributed caching"],
     question: "Where did I put my caching notes?",
     answer:
@@ -81,7 +92,6 @@ export const heroDemos: HeroDemo[] = [
     id: "research",
     label: "Research",
     icon: NotebookPenIcon,
-    status: "coming-soon",
     breadcrumb: ["Systems research", "Reports"],
     question: "Draft a short report on caching strategies.",
     answer:
@@ -115,7 +125,7 @@ export const finalCta: SectionIntro & { primary: CallToAction; secondary: CallTo
   title: "You bring the documents.",
   highlight: "Atlas brings the answers.",
   description:
-    "Atlas is built in the open, one stage at a time. Star the repository to follow along, or connect for updates.",
+    "Turn your documents into answers you can check. Star the repository to follow the project, or connect for updates.",
   primary: { label: "Star on GitHub", href: siteConfig.repositoryUrl },
   secondary: { label: "Connect on LinkedIn", href: siteConfig.author.linkedinUrl },
 };

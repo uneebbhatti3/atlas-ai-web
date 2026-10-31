@@ -99,6 +99,10 @@ export interface Paginated<T> {
 }
 ```
 
+Plan limits: the website only displays them. Plan data lives in
+`src/features/pricing/data/plans.ts`. The backend enforces every limit and answers with error
+code `PLAN_LIMIT_REACHED` plus the limit name.
+
 ### 4.3 Query key factory pattern
 
 ```ts

@@ -10,7 +10,7 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 const STAGGER = 0.07;
 const RISE = 24;
 
-const loadFeatures = () => import("../utils/motion-features").then((mod) => mod.domAnimation);
+const loadFeatures = () => import("@/utils/motion-features").then((mod) => mod.domAnimation);
 
 const elements = { div: m.div, li: m.li } as const;
 

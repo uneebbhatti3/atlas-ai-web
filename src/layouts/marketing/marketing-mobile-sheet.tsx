@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { marketingNavLinks, siteConfig } from "@/data/site";
 
+import { MarketingNavLink } from "./marketing-nav-link";
+
 interface MarketingMobileSheetProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -58,8 +60,8 @@ export function MarketingMobileSheet({
           <ul className="flex flex-col">
             {marketingNavLinks.map((link) => (
               <li key={link.href} className="border-b border-border">
-                <Link
-                  href={link.href}
+                <MarketingNavLink
+                  link={link}
                   onClick={close}
                   className="flex min-h-14 items-center justify-between gap-4 rounded-md font-heading text-h3 outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                 >
@@ -69,7 +71,7 @@ export function MarketingMobileSheet({
                     className="size-5 text-muted-foreground"
                     strokeWidth={1.75}
                   />
-                </Link>
+                </MarketingNavLink>
               </li>
             ))}
           </ul>

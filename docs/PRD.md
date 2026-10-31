@@ -65,12 +65,12 @@ the backend, one stage at a time.
   ready, failed), retry failed processing.
 - **Stage 3:** full-text and semantic search results with source attribution.
 - **Stage 4:** AI conversations with streamed answers and citations.
-- **Stage 5+:** research reports, agents, collaboration, notifications, billing (Stripe test mode),
+- **Stage 5+:** research reports, agents, collaboration, notifications, billing and paid plans,
   usage dashboards, mobile app (Flutter, separate repo).
 
 ## 5. Non-goals for v0.1
 
-- No real payments or production billing.
+- No real payments or production billing (paid plans come in a later stage).
 - No collaboration, invitations or roles.
 - No file uploads or AI features.
 - No frontend automated tests (decision recorded; see `docs/adr/0001-frontend-stack.md`).
@@ -90,3 +90,42 @@ the backend, one stage at a time.
 - A user can only see workspaces, projects and documents they are authorized for. The frontend
   never assumes access; it renders what the API returns and handles 401/403/404 correctly.
 - Public repo: no secrets in code, and any public demo must have usage limits (decided later).
+
+## 8. Plans and pricing
+
+Principle: **limit cost, not usefulness.** Limits sit on what costs money to run (storage,
+processing, AI usage), never on organizing your own knowledge. Citations and data export are on
+every plan.
+
+**Paid plans are not live yet.** Every plan CTA reads "Coming soon"; there is no checkout.
+
+Pro costs $10 / month, or $96 / year (shown as $8 / month, billed yearly). Currency is USD. A
+Team plan with shared workspaces is mentioned only as coming later.
+
+| Feature                     | Free                    | Pro                            |
+| --------------------------- | ----------------------- | ------------------------------ |
+| Workspaces                  | 1                       | 3                              |
+| Projects                    | Unlimited               | Unlimited                      |
+| Documents                   | Unlimited               | Unlimited                      |
+| Storage                     | 1 GB                    | 50 GB                          |
+| Max file size               | 40 MB                   | 1 GB                           |
+| Pages processed per month   | 1,000                   | 25,000                         |
+| AI questions (Ask Atlas)    | 50 / month              | 1,000 / month (fair use)       |
+| Research reports            | 2 / month               | 30 / month                     |
+| Semantic and keyword search | Included (rate-limited) | Included                       |
+| Citations on every answer   | Included                | Included                       |
+| AI model                    | Standard                | Advanced                       |
+| Use your own API key        | Chat and reports        | Chat, reports and model choice |
+| Document processing         | Standard queue          | Priority queue                 |
+| Conversation history        | 30 days                 | Unlimited                      |
+| Export your data            | Included                | Included                       |
+| AI agents                   | —                       | Coming later                   |
+| Integrations                | —                       | Coming later                   |
+
+Own-key rules: questions and reports use the user's own provider key and are not limited by plan
+quotas. Storage, file size and page limits still apply. Indexing always uses Atlas's own model so
+search stays consistent.
+
+On downgrade, extra workspaces become read-only and nothing is deleted.
+
+`src/features/pricing/data/plans.ts` holds these values for the website; keep the two in step.
