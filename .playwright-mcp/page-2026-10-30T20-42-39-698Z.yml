@@ -1,0 +1,296 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Atlas AI" [ref=e5]
+        - text: Atlas AI
+      - navigation "Main" [ref=e6]:
+        - link "Features" [ref=e7] [cursor=pointer]:
+          - /url: /#features
+        - link "How it works" [ref=e8] [cursor=pointer]:
+          - /url: /#how-it-works
+        - link "Pricing" [ref=e9] [cursor=pointer]:
+          - /url: /pricing
+        - link "FAQ" [ref=e10] [cursor=pointer]:
+          - /url: /#faq
+      - generic [ref=e11]:
+        - button "Switch between light and dark theme" [ref=e12]
+        - link "Star on GitHub" [ref=e13] [cursor=pointer]:
+          - /url: https://github.com/uneebbhatti3/atlas-ai-web
+  - main [ref=e14]:
+    - region [ref=e15]:
+      - generic [ref=e16]:
+        - heading "Simple plans, clear limits." [level=1] [ref=e17]
+        - paragraph [ref=e18]: Start free. Upgrade when Atlas becomes part of your daily work.
+      - generic [ref=e19]:
+        - tablist "Billing cycle" [ref=e20]:
+          - tab "Monthly" [selected] [ref=e21]
+          - tab "Yearly" [ref=e22]
+        - tabpanel "Monthly" [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e25]:
+              - generic [ref=e26]:
+                - heading "Free" [level=3] [ref=e28]
+                - paragraph [ref=e29]: For trying Atlas on your own notes.
+              - generic [ref=e30]:
+                - generic [ref=e31]:
+                  - paragraph [ref=e32]:
+                    - generic [ref=e33]: $0
+                    - generic [ref=e34]: / month
+                  - paragraph [ref=e35]: No time limit
+                - button "Coming soon" [disabled]
+                - list [ref=e36]:
+                  - listitem [ref=e37]:
+                    - generic [ref=e41]:
+                      - generic [ref=e42]: "1"
+                      - generic [ref=e43]: Workspaces
+                  - listitem [ref=e44]:
+                    - generic [ref=e48]:
+                      - generic [ref=e49]: Standard
+                      - generic [ref=e50]: AI model
+                  - listitem [ref=e51]:
+                    - generic [ref=e55]:
+                      - generic [ref=e56]: 1 GB
+                      - generic [ref=e57]: Storage
+                  - listitem [ref=e58]:
+                    - generic [ref=e62]:
+                      - generic [ref=e63]: 1,000
+                      - generic [ref=e64]: Pages processed per month
+                  - listitem [ref=e65]:
+                    - generic [ref=e69]:
+                      - generic [ref=e70]: 50 / month
+                      - generic [ref=e71]: AI questions (Ask Atlas)
+                  - listitem [ref=e72]:
+                    - generic [ref=e76]:
+                      - generic [ref=e77]: 2 / month
+                      - generic [ref=e78]: Research reports
+                  - listitem [ref=e79]:
+                    - generic [ref=e83]: Citations on every answer
+            - generic [ref=e85]:
+              - generic [ref=e86]:
+                - generic [ref=e87]:
+                  - heading "Pro" [level=3] [ref=e88]
+                  - generic [ref=e89]: Recommended
+                - paragraph [ref=e90]: For people who use Atlas in their daily work.
+              - generic [ref=e91]:
+                - generic [ref=e92]:
+                  - paragraph [ref=e93]:
+                    - generic [ref=e94]: $10
+                    - generic [ref=e95]: / month
+                  - paragraph [ref=e96]: Billed monthly
+                - button "Coming soon" [disabled]
+                - list [ref=e97]:
+                  - listitem [ref=e98]:
+                    - generic [ref=e102]:
+                      - generic [ref=e103]: "3"
+                      - generic [ref=e104]: Workspaces
+                  - listitem [ref=e105]:
+                    - generic [ref=e109]:
+                      - generic [ref=e110]: Advanced
+                      - generic [ref=e111]: AI model
+                  - listitem [ref=e112]:
+                    - generic [ref=e116]:
+                      - generic [ref=e117]: 50 GB
+                      - generic [ref=e118]: Storage
+                  - listitem [ref=e119]:
+                    - generic [ref=e123]:
+                      - generic [ref=e124]: 25,000
+                      - generic [ref=e125]: Pages processed per month
+                  - listitem [ref=e126]:
+                    - generic [ref=e130]:
+                      - generic [ref=e131]: 1,000 / month (fair use)
+                      - generic [ref=e132]: AI questions (Ask Atlas)
+                  - listitem [ref=e133]:
+                    - generic [ref=e137]:
+                      - generic [ref=e138]: 30 / month
+                      - generic [ref=e139]: Research reports
+                  - listitem [ref=e140]:
+                    - generic [ref=e144]: Citations on every answer
+      - paragraph [ref=e146]: Team plan with shared workspaces is coming later.
+    - region [ref=e147]:
+      - generic [ref=e149]:
+        - heading "Compare every feature." [level=2] [ref=e150]
+        - paragraph [ref=e151]: Everything each plan includes, side by side.
+      - region "Compare every feature." [ref=e152]:
+        - table [ref=e154]:
+          - rowgroup [ref=e155]:
+            - row [ref=e156]:
+              - columnheader "Feature" [ref=e157]
+              - columnheader "Free" [ref=e159]
+              - columnheader "Pro" [ref=e160]
+          - rowgroup [ref=e161]:
+            - row [ref=e162]:
+              - columnheader "Organize" [ref=e163]
+            - row [ref=e164]:
+              - rowheader "Workspaces" [ref=e165]
+              - cell "1" [ref=e167]
+              - cell "3" [ref=e168]
+            - row [ref=e169]:
+              - rowheader "Projects" [ref=e170]
+              - cell "Unlimited" [ref=e172]
+              - cell "Unlimited" [ref=e173]
+            - row [ref=e174]:
+              - rowheader "Documents" [ref=e175]
+              - cell "Unlimited" [ref=e177]
+              - cell "Unlimited" [ref=e178]
+            - row [ref=e179]:
+              - rowheader "Export your data" [ref=e180]
+              - cell "Included" [ref=e182]
+              - cell "Included" [ref=e186]
+            - row [ref=e190]:
+              - columnheader "Knowledge and AI" [ref=e191]
+            - row [ref=e192]:
+              - rowheader "Semantic and keyword search" [ref=e193]
+              - cell "Included (rate-limited)" [ref=e195]
+              - cell "Included" [ref=e199]
+            - row [ref=e203]:
+              - rowheader "Citations on every answer" [ref=e204]
+              - cell "Included" [ref=e206]
+              - cell "Included" [ref=e210]
+            - row [ref=e214]:
+              - rowheader "AI model" [ref=e215]
+              - cell "Standard" [ref=e217]
+              - cell "Advanced" [ref=e218]
+            - row [ref=e219]:
+              - rowheader "Conversation history" [ref=e220]
+              - cell "30 days" [ref=e222]
+              - cell "Unlimited" [ref=e223]
+            - row [ref=e224]:
+              - columnheader "Limits" [ref=e225]
+            - row [ref=e226]:
+              - rowheader "Storage" [ref=e227]
+              - cell "1 GB" [ref=e229]
+              - cell "50 GB" [ref=e230]
+            - row [ref=e231]:
+              - rowheader "Max file size" [ref=e232]
+              - cell "40 MB" [ref=e234]
+              - cell "1 GB" [ref=e235]
+            - row [ref=e236]:
+              - rowheader [ref=e237]:
+                - generic [ref=e238]:
+                  - text: Pages processed per month
+                  - button "What Pages processed per month means" [ref=e239]
+              - cell "1,000" [ref=e240]
+              - cell "25,000" [ref=e241]
+            - row [ref=e242]:
+              - rowheader [ref=e243]:
+                - generic [ref=e244]:
+                  - text: AI questions (Ask Atlas)
+                  - button "What AI questions (Ask Atlas) means" [ref=e245]
+              - cell "50 / month" [ref=e246]
+              - cell "1,000 / month (fair use)" [ref=e247]
+            - row [ref=e248]:
+              - rowheader "Research reports" [ref=e249]
+              - cell "2 / month" [ref=e251]
+              - cell "30 / month" [ref=e252]
+            - row [ref=e253]:
+              - columnheader "Advanced" [ref=e254]
+            - row [ref=e255]:
+              - rowheader [ref=e256]:
+                - generic [ref=e257]:
+                  - text: Use your own API key
+                  - button "What Use your own API key means" [ref=e258]
+              - cell "Chat and reports" [ref=e259]
+              - cell "Chat, reports and model choice" [ref=e260]
+            - row [ref=e261]:
+              - rowheader [ref=e262]:
+                - generic [ref=e263]:
+                  - text: Document processing
+                  - button "What Document processing means" [ref=e264]
+              - cell "Standard queue" [ref=e265]
+              - cell "Priority queue" [ref=e266]
+            - row [ref=e267]:
+              - rowheader "AI agents" [ref=e268]
+              - cell "Not included" [ref=e270]
+              - cell "Coming later" [ref=e273]
+            - row [ref=e275]:
+              - rowheader "Integrations" [ref=e276]
+              - cell "Not included" [ref=e278]
+              - cell "Coming later" [ref=e281]
+    - region [ref=e283]:
+      - generic [ref=e285]:
+        - heading "Pricing questions, answered." [level=2] [ref=e286]
+        - paragraph [ref=e287]: How plans, limits and your data work.
+      - generic [ref=e288]:
+        - generic [ref=e289]:
+          - heading [level=3] [ref=e290]:
+            - button "Is the Free plan really free?" [ref=e291]
+          - region "Is the Free plan really free?"
+        - generic [ref=e293]:
+          - heading [level=3] [ref=e294]:
+            - button "What counts as a “page processed”?" [ref=e295]
+          - region "What counts as a “page processed”?"
+        - generic [ref=e297]:
+          - heading [level=3] [ref=e298]:
+            - button "Can I use my own API key, and what does it change?" [ref=e299]
+          - region "Can I use my own API key, and what does it change?"
+        - generic [ref=e301]:
+          - heading [level=3] [ref=e302]:
+            - button "What happens if I reach a limit?" [ref=e303]
+          - region "What happens if I reach a limit?"
+        - generic [ref=e305]:
+          - heading [level=3] [ref=e306]:
+            - button "What happens to my data if I downgrade?" [ref=e307]
+          - region "What happens to my data if I downgrade?"
+        - generic [ref=e309]:
+          - heading [level=3] [ref=e310]:
+            - button "What is the priority queue?" [ref=e311]
+          - region "What is the priority queue?"
+        - generic [ref=e313]:
+          - heading [level=3] [ref=e314]:
+            - button "When will paid plans be available?" [ref=e315]
+          - region "When will paid plans be available?"
+        - generic [ref=e317]:
+          - heading [level=3] [ref=e318]:
+            - button "Can I export my data?" [ref=e319]
+          - region "Can I export my data?"
+  - contentinfo [ref=e321]:
+    - generic [ref=e322]:
+      - paragraph [ref=e324]: Atlas AI
+      - generic [ref=e326]:
+        - generic [ref=e327]:
+          - link [ref=e328] [cursor=pointer]:
+            - /url: /
+            - img "Atlas AI" [ref=e329]
+            - text: Atlas AI
+          - paragraph [ref=e330]: An AI knowledge and research workspace.
+        - navigation "Product" [ref=e331]:
+          - heading "Product" [level=2] [ref=e332]
+          - list [ref=e333]:
+            - listitem [ref=e334]:
+              - link "Features" [ref=e335] [cursor=pointer]:
+                - /url: /#features
+            - listitem [ref=e336]:
+              - link "How it works" [ref=e337] [cursor=pointer]:
+                - /url: /#how-it-works
+            - listitem [ref=e338]:
+              - link "Pricing" [ref=e339] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e340]:
+              - link "FAQ" [ref=e341] [cursor=pointer]:
+                - /url: /#faq
+        - navigation "Project" [ref=e342]:
+          - heading "Project" [level=2] [ref=e343]
+          - list [ref=e344]:
+            - listitem [ref=e345]:
+              - link "GitHub repository" [ref=e346] [cursor=pointer]:
+                - /url: https://github.com/uneebbhatti3/atlas-ai-web
+            - listitem [ref=e347]:
+              - link "Decision records" [ref=e348] [cursor=pointer]:
+                - /url: https://github.com/uneebbhatti3/atlas-ai-web/tree/main/sessions/adr
+        - navigation "Author" [ref=e349]:
+          - heading "Author" [level=2] [ref=e350]
+          - list [ref=e351]:
+            - listitem [ref=e352]:
+              - link "Website" [ref=e353] [cursor=pointer]:
+                - /url: https://uneebbhatti.vercel.app/
+            - listitem [ref=e354]:
+              - link "LinkedIn" [ref=e355] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/uneeb-bhatti/
+      - separator [ref=e356]
+      - generic [ref=e357]:
+        - paragraph [ref=e358]: © 2026 Atlas AI.
+        - link "Built by Uneeb Bhatti" [ref=e359] [cursor=pointer]:
+          - /url: https://uneebbhatti.vercel.app/
+  - alert [ref=e360]

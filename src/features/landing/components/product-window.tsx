@@ -48,7 +48,7 @@ export function ProductWindow({ breadcrumb, children, className }: ProductWindow
           })}
         </div>
         <Badge variant="outline" className="ml-auto shrink-0 bg-background">
-          Concept
+          Example
         </Badge>
       </div>
       {children}

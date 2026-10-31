@@ -7,9 +7,9 @@ import {
   HeroSection,
   HowItWorksSection,
   PrivacySection,
-  RoadmapSection,
   TilesSection,
 } from "@/features/landing";
+import { PricingSection } from "@/features/pricing";
 
 export default function HomePage() {
   const jsonLd = buildLandingJsonLd();
@@ -28,7 +28,7 @@ export default function HomePage() {
       <ExplorerSection />
       <PrivacySection />
       <HowItWorksSection />
-      <RoadmapSection />
+      <PricingSection />
       <FaqSection />
       <CtaSection />
     </>

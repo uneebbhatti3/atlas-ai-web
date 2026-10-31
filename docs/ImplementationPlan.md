@@ -46,7 +46,7 @@ Playwright visual check.
 - [ ] `MarketingLayout`: translucent nav, footer
 - [ ] Hero: headline, subhead, primary CTA, GitHub link
 - [ ] Sections: what Atlas is, the hierarchy (Workspace → Project → Document → AI), "built as an
-      engineering lab" story, roadmap stages, open-source call to action
+      engineering lab" story, GitHub call to action
 - [ ] Scroll animations with reduced-motion fallback
 - [ ] Metadata, Open Graph image, favicon
 
@@ -107,6 +107,16 @@ expired session redirects to login without a broken screen.
 - [ ] Accessibility pass (keyboard-only walkthrough of every journey in `AppFlow.md`)
 - [ ] Performance pass against `TRD.md` §9 budgets
 - [ ] Tag `v0.1.0`, write a retrospective in `PROGRESS.md`
+
+---
+
+## Later phase: Billing and entitlements (web)
+
+- [x] Pricing page and landing pricing section
+- [ ] Usage meters
+- [ ] Upgrade flow
+- [ ] Own-key settings (Settings → API keys)
+- [ ] Limit-reached states (`PLAN_LIMIT_REACHED`)
 
 ---
 

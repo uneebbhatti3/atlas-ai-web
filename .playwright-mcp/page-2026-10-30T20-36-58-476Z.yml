@@ -1,0 +1,463 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - generic [ref=f2e3]:
+      - link [ref=f2e4] [cursor=pointer]:
+        - /url: /
+        - img "Atlas AI" [ref=f2e5]
+        - text: Atlas AI
+      - navigation "Main" [ref=f2e6]:
+        - link "Features" [ref=f2e7] [cursor=pointer]:
+          - /url: /#features
+        - link "How it works" [ref=f2e8] [cursor=pointer]:
+          - /url: /#how-it-works
+        - link "Pricing" [ref=f2e9] [cursor=pointer]:
+          - /url: "#pricing"
+        - link "FAQ" [ref=f2e10] [cursor=pointer]:
+          - /url: /#faq
+      - generic [ref=f2e11]:
+        - button "Switch between light and dark theme" [ref=f2e12]
+        - link "Star on GitHub" [ref=f2e13] [cursor=pointer]:
+          - /url: https://github.com/uneebbhatti3/atlas-ai-web
+  - main [ref=f2e14]:
+    - region [ref=f2e15]:
+      - generic [ref=f2e16]:
+        - heading "Ask your own research. Get answers with sources." [level=1] [ref=f2e17]:
+          - generic [ref=f2e18]: Ask your own research.
+          - generic [ref=f2e19]: Get answers with sources.
+        - paragraph [ref=f2e20]: Atlas turns your workspaces, projects and documents into a knowledge base you can search by meaning and question with cited answers.
+        - generic [ref=f2e21]:
+          - link [ref=f2e22] [cursor=pointer]:
+            - /url: https://github.com/uneebbhatti3/atlas-ai-web
+          - link "See how it works" [ref=f2e24] [cursor=pointer]:
+            - /url: "#how-it-works"
+      - figure "Product walkthrough." [ref=f2e25]:
+        - generic [ref=f2e27]:
+          - generic "Atlas AI product walkthrough" [ref=f2e28] [cursor=pointer]: Your browser does not support the video tag.
+          - generic [ref=f2e29]:
+            - button "Play video" [ref=f2e30]
+            - generic [ref=f2e31]: Seek, in seconds
+            - group [ref=f2e32]:
+              - slider "Seek, in seconds" [ref=f2e37]: "0"
+            - generic [ref=f2e38]: 0:00 / 1:12
+            - button "Mute video" [ref=f2e39]
+            - generic [ref=f2e40]:
+              - generic [ref=f2e41]: Volume
+              - group [ref=f2e42]:
+                - slider "Volume" [ref=f2e47]: "1"
+      - figure "Example conversations." [ref=f2e49]:
+        - generic [ref=f2e50]:
+          - generic [ref=f2e51]:
+            - generic [ref=f2e52]: "Try a question:"
+            - tablist "Example questions" [ref=f2e53]:
+              - tab "Ask" [selected] [ref=f2e54]
+              - tab "Search" [ref=f2e55]
+              - tab "Organize" [ref=f2e56]
+              - tab "Research" [ref=f2e57]
+          - generic [ref=f2e58]:
+            - generic:
+              - generic:
+                - paragraph
+                - list:
+                  - listitem: indexing Distributed caching
+                  - listitem: cache-invalidation.md ✓
+                  - listitem: redis-vs-memcached.md ✓
+                  - listitem: write-strategies.md ✓
+                  - listitem: 41 passages ready to search
+              - generic:
+                - img "Atlas AI"
+                - generic:
+                  - generic:
+                    - paragraph: Access checked
+                    - generic: just now
+                  - paragraph: Only your own workspace was searched.
+              - generic:
+                - img "Atlas AI"
+                - generic:
+                  - generic:
+                    - paragraph: 2 sources cited
+                    - generic: just now
+                  - paragraph: Every claim links back to a passage.
+            - tabpanel [ref=f2e59]:
+              - generic [ref=f2e61]:
+                - generic [ref=f2e62]:
+                  - generic [ref=f2e67]:
+                    - generic [ref=f2e68]: Systems research
+                    - generic [ref=f2e70]: Ask Atlas
+                  - generic [ref=f2e74]: Example
+                - generic [ref=f2e75]:
+                  - paragraph [ref=f2e76]: Ask Atlas
+                  - paragraph [ref=f2e80]: Today at 9:41 AM
+                  - generic [ref=f2e81]: When should I prefer write-through over TTL expiry?
+                  - generic [ref=f2e82]:
+                    - text: "Prefer write-through when stale reads are unacceptable: it keeps the cache consistent on every write. TTL expiry is simpler when a short window of staleness is fine."
+                    - generic [ref=f2e83]: "1"
+                    - generic [ref=f2e85]: "2"
+                  - generic [ref=f2e87]:
+                    - generic [ref=f2e88]:
+                      - generic [ref=f2e89]: "1"
+                      - generic [ref=f2e90]:
+                        - paragraph [ref=f2e91]: cache-invalidation.md
+                        - paragraph [ref=f2e92]: Write-through keeps the cache consistent at the cost of slower writes.
+                    - generic [ref=f2e93]:
+                      - generic [ref=f2e94]: "2"
+                      - generic [ref=f2e95]:
+                        - paragraph [ref=f2e96]: write-strategies.md
+                        - paragraph [ref=f2e97]: TTL expiry trades a window of staleness for simplicity.
+    - region [ref=f2e99]:
+      - generic [ref=f2e101]:
+        - heading "One workspace, every source, always answerable." [level=2] [ref=f2e102]
+        - paragraph [ref=f2e103]: Everything in Atlas lives in one hierarchy, so every answer can trace back to the note it came from.
+      - list [ref=f2e104]:
+        - listitem [ref=f2e105]:
+          - generic [ref=f2e111]:
+            - 'heading "Step 1: Workspace" [level=3] [ref=f2e112]':
+              - generic [ref=f2e113]: "Step 1:"
+              - text: Workspace
+            - paragraph [ref=f2e114]: An area of your work
+        - listitem [ref=f2e115]:
+          - generic [ref=f2e119]:
+            - 'heading "Step 2: Project" [level=3] [ref=f2e120]':
+              - generic [ref=f2e121]: "Step 2:"
+              - text: Project
+            - paragraph [ref=f2e122]: A focused effort
+        - listitem [ref=f2e123]:
+          - generic [ref=f2e128]:
+            - 'heading "Step 3: Documents" [level=3] [ref=f2e129]':
+              - generic [ref=f2e130]: "Step 3:"
+              - text: Documents
+            - paragraph [ref=f2e131]: Notes in Markdown
+        - listitem [ref=f2e132]:
+          - generic [ref=f2e145]:
+            - 'heading "Step 4: Knowledge" [level=3] [ref=f2e146]':
+              - generic [ref=f2e147]: "Step 4:"
+              - text: Knowledge
+            - paragraph [ref=f2e148]: Searchable passages
+        - listitem [ref=f2e149]:
+          - generic [ref=f2e154]:
+            - 'heading "Step 5: AI" [level=3] [ref=f2e155]':
+              - generic [ref=f2e156]: "Step 5:"
+              - text: AI
+            - paragraph [ref=f2e157]: Answers with sources
+    - region [ref=f2e158]:
+      - generic [ref=f2e160]:
+        - heading "Research before and after Atlas." [level=2] [ref=f2e161]
+        - paragraph [ref=f2e162]: The same notes. One version you dig through, one version that answers back.
+      - generic [ref=f2e163]:
+        - generic [ref=f2e164]:
+          - heading "Without Atlas" [level=3] [ref=f2e165]
+          - list [ref=f2e166]:
+            - listitem [ref=f2e167]:
+              - generic [ref=f2e168]: 47 open tabs
+              - generic [ref=f2e169]: Kept open just in case
+            - listitem [ref=f2e170]:
+              - generic [ref=f2e171]: notes-final-v3.docx
+              - generic [ref=f2e172]: Edited 3 weeks ago
+            - listitem [ref=f2e173]:
+              - generic [ref=f2e174]: Chatbot answer
+              - generic [ref=f2e175]: Sounds right. No sources.
+          - paragraph [ref=f2e176]: Notes everywhere. Answers you can't check.
+        - generic [ref=f2e177]:
+          - heading "With Atlas" [level=3] [ref=f2e178]
+          - generic [ref=f2e179]:
+            - generic [ref=f2e180]:
+              - img "Atlas AI" [ref=f2e181]
+              - generic [ref=f2e182]:
+                - generic [ref=f2e183]:
+                  - paragraph [ref=f2e184]: Organized
+                  - generic [ref=f2e185]: 9:12 AM
+                - paragraph [ref=f2e186]: 12 notes filed into Distributed caching.
+            - generic [ref=f2e187]:
+              - img "Atlas AI" [ref=f2e188]
+              - generic [ref=f2e189]:
+                - generic [ref=f2e190]:
+                  - paragraph [ref=f2e191]: Found by meaning
+                  - generic [ref=f2e192]: 9:40 AM
+                - paragraph [ref=f2e193]: 3 passages match, even with different words.
+            - generic [ref=f2e194]:
+              - img "Atlas AI" [ref=f2e195]
+              - generic [ref=f2e196]:
+                - generic [ref=f2e197]:
+                  - paragraph [ref=f2e198]: Answered
+                  - generic [ref=f2e199]: 9:41 AM
+                - paragraph [ref=f2e200]: Answer ready with 2 citations you can open.
+          - paragraph [ref=f2e201]: One place for your notes. A source for every answer.
+    - region [ref=f2e202]:
+      - generic [ref=f2e204]:
+        - heading "Everything inside, one workspace." [level=2] [ref=f2e205]
+        - paragraph [ref=f2e206]: Pick a part of Atlas to see what it does.
+      - generic [ref=f2e207]:
+        - tablist [ref=f2e208]:
+          - tab "Organize" [selected] [ref=f2e209]
+          - tab "Process" [ref=f2e210]
+          - tab "Search" [ref=f2e211]
+          - tab "Ask" [ref=f2e212]
+          - tab "Research" [ref=f2e213]
+        - tabpanel [ref=f2e214]:
+          - generic [ref=f2e215]:
+            - generic [ref=f2e216]:
+              - heading "Every note in its place" [level=3] [ref=f2e217]
+              - paragraph [ref=f2e218]: A workspace for each area of your work, projects inside it and Markdown documents inside those.
+            - list [ref=f2e221]:
+              - listitem [ref=f2e222]:
+                - generic [ref=f2e226]: Workspaces for each area of your work
+              - listitem [ref=f2e228]:
+                - generic [ref=f2e232]: Projects inside every workspace
+              - listitem [ref=f2e234]:
+                - generic [ref=f2e238]: Markdown documents with a clean editor
+              - listitem [ref=f2e240]:
+                - generic [ref=f2e244]: Rename, archive or delete in a few clicks
+              - listitem [ref=f2e246]:
+                - generic [ref=f2e250]: Light and dark themes
+              - listitem [ref=f2e252]:
+                - generic [ref=f2e256]: Works on phone, tablet and desktop
+    - region [ref=f2e258]:
+      - generic [ref=f2e259]:
+        - list [ref=f2e262]:
+          - listitem [ref=f2e263]:
+            - generic [ref=f2e267]:
+              - generic [ref=f2e268]: You only see your own workspaces
+              - generic [ref=f2e269]: Checked on the server, on every request
+          - listitem [ref=f2e270]:
+            - generic [ref=f2e274]:
+              - generic [ref=f2e275]: AI only reads what you can access
+              - generic [ref=f2e276]: Search and answers use your documents, nobody else's
+          - listitem [ref=f2e277]:
+            - generic [ref=f2e281]:
+              - generic [ref=f2e282]: Sessions you can see and revoke
+              - generic [ref=f2e283]: Sign out any device from your settings
+          - listitem [ref=f2e284]:
+            - generic [ref=f2e288]:
+              - generic [ref=f2e289]: Delete your account, delete your data
+              - generic [ref=f2e290]: No hidden copies kept for later
+        - generic [ref=f2e292]:
+          - img "Atlas AI" [ref=f2e293]
+          - generic [ref=f2e294]:
+            - generic [ref=f2e295]:
+              - paragraph [ref=f2e296]: Access denied
+              - generic [ref=f2e297]: 8:04 AM
+            - paragraph [ref=f2e298]: A request for another person's workspace was blocked.
+      - generic [ref=f2e300]:
+        - heading "Your documents, kept private." [level=2] [ref=f2e301]
+        - paragraph [ref=f2e302]: Access is checked on the server for every request. Atlas only searches and answers from documents you are allowed to see.
+    - region [ref=f2e303]:
+      - generic [ref=f2e305]:
+        - heading "You ask. Atlas finds the source." [level=2] [ref=f2e306]
+        - paragraph [ref=f2e307]: Four steps from a blank workspace to answers you can trust.
+      - generic [ref=f2e308]:
+        - list [ref=f2e309]:
+          - listitem [ref=f2e310]:
+            - generic [aria-hidden] [ref=f2e312]: "1"
+            - generic [ref=f2e313]:
+              - heading "Create a workspace" [level=3] [ref=f2e314]
+              - paragraph [ref=f2e315]: Start one for a course, a codebase or a topic you are researching.
+          - listitem [ref=f2e316]:
+            - generic [aria-hidden] [ref=f2e318]: "2"
+            - generic [ref=f2e319]:
+              - heading "Add documents" [level=3] [ref=f2e320]
+              - paragraph [ref=f2e321]: Write your notes in Markdown, right inside a project.
+          - listitem [ref=f2e322]:
+            - generic [aria-hidden] [ref=f2e324]: "3"
+            - generic [ref=f2e325]:
+              - heading "Atlas indexes them" [level=3] [ref=f2e326]
+              - paragraph [ref=f2e327]: Documents are split into passages and indexed, so they can be found by meaning.
+          - listitem [ref=f2e328]:
+            - generic [aria-hidden] [ref=f2e329]: "4"
+            - generic [ref=f2e330]:
+              - heading "Ask, search and research" [level=3] [ref=f2e331]
+              - paragraph [ref=f2e332]: Get answers and reports that cite the exact passages they came from.
+        - 'figure "Example: how a cited answer looks." [ref=f2e334]':
+          - generic [ref=f2e335]:
+            - paragraph [ref=f2e336]: Today at 4:15 PM
+            - generic [ref=f2e337]: Why did we pick write-through for sessions?
+            - paragraph [ref=f2e338]: Searching Systems research · 41 passages
+            - generic [ref=f2e339]:
+              - text: Because a stale session would log people out at random. Your notes chose consistency over write speed.
+              - generic [ref=f2e340]: "1"
+              - generic [ref=f2e342]: "2"
+            - generic [ref=f2e344]: Show me source 1.
+            - generic [ref=f2e345]: “Write-through keeps the cache consistent at the cost of slower writes.” From cache-invalidation.md.
+    - region [ref=f2e347]:
+      - generic [ref=f2e349]:
+        - heading "Simple plans, clear limits." [level=2] [ref=f2e350]
+        - paragraph [ref=f2e351]: Start free. Upgrade when Atlas becomes part of your daily work.
+      - generic [ref=f2e353]:
+        - tablist "Billing cycle" [ref=f2e354]:
+          - tab "Monthly" [selected] [ref=f2e355]
+          - tab "Yearly 2 months free" [ref=f2e356]:
+            - text: Yearly
+            - generic [ref=f2e357]: 2 months free
+        - tabpanel [ref=f2e358]:
+          - generic [ref=f2e359]:
+            - generic [ref=f2e360]:
+              - generic [ref=f2e361]:
+                - heading "Free" [level=3] [ref=f2e363]
+                - paragraph [ref=f2e364]: For trying Atlas on your own notes.
+              - generic [ref=f2e365]:
+                - generic [ref=f2e366]:
+                  - paragraph [ref=f2e367]:
+                    - generic [ref=f2e368]: $0
+                    - generic [ref=f2e369]: / month
+                  - paragraph [ref=f2e370]
+                - button "Coming soon" [disabled]
+                - list [ref=f2e371]:
+                  - listitem [ref=f2e372]:
+                    - generic [ref=f2e376]:
+                      - generic [ref=f2e377]: "1"
+                      - generic [ref=f2e378]: Workspaces
+                  - listitem [ref=f2e379]:
+                    - generic [ref=f2e383]:
+                      - generic [ref=f2e384]: Standard
+                      - generic [ref=f2e385]: AI model
+                  - listitem [ref=f2e386]:
+                    - generic [ref=f2e390]:
+                      - generic [ref=f2e391]: 1 GB
+                      - generic [ref=f2e392]: Storage
+                  - listitem [ref=f2e393]:
+                    - generic [ref=f2e397]:
+                      - generic [ref=f2e398]: 1,000
+                      - generic [ref=f2e399]: Pages processed per month
+                  - listitem [ref=f2e400]:
+                    - generic [ref=f2e404]:
+                      - generic [ref=f2e405]: 50 / month
+                      - generic [ref=f2e406]: AI questions (Ask Atlas)
+                  - listitem [ref=f2e407]:
+                    - generic [ref=f2e411]:
+                      - generic [ref=f2e412]: 2 / month
+                      - generic [ref=f2e413]: Research reports
+                  - listitem [ref=f2e414]:
+                    - generic [ref=f2e418]: Citations on every answer
+            - generic [ref=f2e420]:
+              - generic [ref=f2e421]:
+                - generic [ref=f2e422]:
+                  - heading "Pro" [level=3] [ref=f2e423]
+                  - generic [ref=f2e424]: Recommended
+                - paragraph [ref=f2e425]: For people who use Atlas in their daily work.
+              - generic [ref=f2e426]:
+                - generic [ref=f2e427]:
+                  - paragraph [ref=f2e428]:
+                    - generic [ref=f2e429]: $10
+                    - generic [ref=f2e430]: / month
+                  - paragraph [ref=f2e431]
+                - button "Coming soon" [disabled]
+                - list [ref=f2e432]:
+                  - listitem [ref=f2e433]:
+                    - generic [ref=f2e437]:
+                      - generic [ref=f2e438]: "3"
+                      - generic [ref=f2e439]: Workspaces
+                  - listitem [ref=f2e440]:
+                    - generic [ref=f2e444]:
+                      - generic [ref=f2e445]: Advanced
+                      - generic [ref=f2e446]: AI model
+                  - listitem [ref=f2e447]:
+                    - generic [ref=f2e451]:
+                      - generic [ref=f2e452]: 50 GB
+                      - generic [ref=f2e453]: Storage
+                  - listitem [ref=f2e454]:
+                    - generic [ref=f2e458]:
+                      - generic [ref=f2e459]: 25,000
+                      - generic [ref=f2e460]: Pages processed per month
+                  - listitem [ref=f2e461]:
+                    - generic [ref=f2e465]:
+                      - generic [ref=f2e466]: 1,000 / month (fair use)
+                      - generic [ref=f2e467]: AI questions (Ask Atlas)
+                  - listitem [ref=f2e468]:
+                    - generic [ref=f2e472]:
+                      - generic [ref=f2e473]: 30 / month
+                      - generic [ref=f2e474]: Research reports
+                  - listitem [ref=f2e475]:
+                    - generic [ref=f2e479]: Citations on every answer
+      - generic [ref=f2e481]:
+        - link "Compare all features" [ref=f2e482] [cursor=pointer]:
+          - /url: /pricing
+        - paragraph [ref=f2e485]: Team plan with shared workspaces is coming later.
+    - region [ref=f2e486]:
+      - generic [ref=f2e488]:
+        - heading "Questions, answered." [level=2] [ref=f2e489]
+        - paragraph [ref=f2e490]: Straight answers about what Atlas is and how it works.
+      - generic [ref=f2e491]:
+        - heading [level=3] [ref=f2e493]:
+          - button "What is Atlas AI?" [ref=f2e494]
+        - heading [level=3] [ref=f2e497]:
+          - button "Will Atlas have paid plans?" [ref=f2e498]
+        - heading [level=3] [ref=f2e501]:
+          - button "Is my data private?" [ref=f2e502]
+        - heading [level=3] [ref=f2e505]:
+          - button "Which file types are supported?" [ref=f2e506]
+        - heading [level=3] [ref=f2e509]:
+          - button "How do citations work?" [ref=f2e510]
+        - heading [level=3] [ref=f2e513]:
+          - button "What does “engineering lab” mean?" [ref=f2e514]
+        - heading [level=3] [ref=f2e517]:
+          - button "How can I follow Atlas?" [ref=f2e518]
+    - region [ref=f2e520]:
+      - generic [ref=f2e521]:
+        - generic [ref=f2e522]:
+          - generic [ref=f2e523]:
+            - heading "You bring the documents. Atlas brings the answers." [level=2] [ref=f2e524]
+            - paragraph [ref=f2e525]: Turn your documents into answers you can check. Star the repository to follow the project, or connect for updates.
+          - generic [ref=f2e526]:
+            - link [ref=f2e527] [cursor=pointer]:
+              - /url: https://github.com/uneebbhatti3/atlas-ai-web
+            - link "Connect on LinkedIn" [ref=f2e529] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/uneeb-bhatti/
+        - generic [ref=f2e533]:
+          - generic [ref=f2e534]:
+            - generic [ref=f2e539]:
+              - generic [ref=f2e540]: Systems research
+              - generic [ref=f2e542]: Ask Atlas
+            - generic [ref=f2e546]: Example
+          - generic [ref=f2e547]:
+            - generic [ref=f2e548]: When should I prefer write-through over TTL expiry?
+            - generic [ref=f2e549]:
+              - text: "Prefer write-through when stale reads are unacceptable: it keeps the cache consistent on every write. TTL expiry is simpler when a short window of staleness is fine."
+              - generic [ref=f2e550]: "1"
+              - generic [ref=f2e552]: "2"
+  - contentinfo [ref=f2e554]:
+    - generic [ref=f2e555]:
+      - paragraph [ref=f2e557]: Atlas AI
+      - generic [ref=f2e559]:
+        - generic [ref=f2e560]:
+          - link [ref=f2e561] [cursor=pointer]:
+            - /url: /
+            - img "Atlas AI" [ref=f2e562]
+            - text: Atlas AI
+          - paragraph [ref=f2e563]: An AI knowledge and research workspace.
+        - navigation "Product" [ref=f2e564]:
+          - heading "Product" [level=2] [ref=f2e565]
+          - list [ref=f2e566]:
+            - listitem [ref=f2e567]:
+              - link "Features" [ref=f2e568] [cursor=pointer]:
+                - /url: /#features
+            - listitem [ref=f2e569]:
+              - link "How it works" [ref=f2e570] [cursor=pointer]:
+                - /url: /#how-it-works
+            - listitem [ref=f2e571]:
+              - link "Pricing" [ref=f2e572] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=f2e573]:
+              - link "FAQ" [ref=f2e574] [cursor=pointer]:
+                - /url: /#faq
+        - navigation "Project" [ref=f2e575]:
+          - heading "Project" [level=2] [ref=f2e576]
+          - list [ref=f2e577]:
+            - listitem [ref=f2e578]:
+              - link "GitHub repository" [ref=f2e579] [cursor=pointer]:
+                - /url: https://github.com/uneebbhatti3/atlas-ai-web
+            - listitem [ref=f2e580]:
+              - link "Decision records" [ref=f2e581] [cursor=pointer]:
+                - /url: https://github.com/uneebbhatti3/atlas-ai-web/tree/main/sessions/adr
+        - navigation "Author" [ref=f2e582]:
+          - heading "Author" [level=2] [ref=f2e583]
+          - list [ref=f2e584]:
+            - listitem [ref=f2e585]:
+              - link "Website" [ref=f2e586] [cursor=pointer]:
+                - /url: https://uneebbhatti.vercel.app/
+            - listitem [ref=f2e587]:
+              - link "LinkedIn" [ref=f2e588] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/uneeb-bhatti/
+      - separator [ref=f2e589]
+      - generic [ref=f2e590]:
+        - paragraph [ref=f2e591]: © 2026 Atlas AI.
+        - link "Built by Uneeb Bhatti" [ref=f2e592] [cursor=pointer]:
+          - /url: https://uneebbhatti.vercel.app/
+  - alert [ref=f2e593]

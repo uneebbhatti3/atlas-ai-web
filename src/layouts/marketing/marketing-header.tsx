@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { marketingNavLinks, siteConfig } from "@/data/site";
 
 import { MarketingMobileNav } from "./marketing-mobile-nav";
+import { MarketingNavLink } from "./marketing-nav-link";
 
 export function MarketingHeader() {
   return (
@@ -24,16 +25,16 @@ export function MarketingHeader() {
 
         <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
           {marketingNavLinks.map((link) => (
-            <Link
+            <MarketingNavLink
               key={link.href}
-              href={link.href}
+              link={link}
               className={cn(
                 buttonVariants({ variant: "ghost" }),
                 "h-11 rounded-full px-4 text-sm text-muted-foreground hover:text-foreground",
               )}
             >
               {link.label}
-            </Link>
+            </MarketingNavLink>
           ))}
         </nav>
 

@@ -34,6 +34,7 @@ direction comes from shipanysaas.com (owner request, 2026-10-27). Hex values are
 | `--brand`                              | `#6355FF` (oklch 0.569 0.241 279) | `#8A8FFF` (oklch 0.7 0.17 279) | Logo, chat bubbles, citation chips, ticks |
 | `--brand-foreground`                   | `#FFFFFF`                         | `#0A0A0A`                      | Text and icons on brand                   |
 | `--brand-soft`                         | `#EEEEF9`                         | `#23233E`                      | Lavender panels, headline highlight       |
+| `--brand-player`                       | `#5E56FA`                         | `#5E56FA`                      | Hero video controls only (owner request)  |
 | `--border`                             | `#E5E5E5`                         | white at 10%                   | Decorative hairlines, card edges          |
 | `--input`                              | `#E5E5E5`                         | white at 15%                   | Form control outlines                     |
 | `--ring`                               | brand                             | brand                          | Focus ring (shadcn applies it at 50%)     |
@@ -51,8 +52,7 @@ Rules:
   the block switches to white (`tone="card"`). The heading must be `isolate` so the block sits
   behind the text and never clips descenders of the line above.
 - **Never violet text on lavender** (4.27:1). Large headline text on lavender is foreground.
-- **Status without colour.** "Available" = solid, "In progress" = secondary fill, "Coming soon" =
-  outline. Nothing on the landing page is "Available" until it ships.
+- **No build status on public pages.** No "In progress" or "Coming soon" labels (owner, 2026-10-30).
 - `--destructive` is the only other hue, reserved for errors.
 - Dark mode follows the system setting through `next-themes`, which sets the `.dark` class.
 
@@ -171,6 +171,22 @@ Rules:
 | Badge              | `--radius-full`, caption type; status shown without colour: solid, secondary fill or outline     |
 | Skeleton           | `--surface-secondary` with a soft shimmer; respects reduced motion                               |
 | Icons              | Lucide, 1.75 stroke, 16px inline / 20px buttons / 24px empty states                              |
+
+Pricing patterns:
+
+- **Plan card:** shadcn `Card`, `rounded-3xl`, name, one-sentence description, price, a disabled
+  secondary CTA, then the key features as `CheckItem`s: limits lead with the number, with the
+  feature name as the detail. Every price has a one-line note, so monthly and yearly cards are
+  the same height.
+- **Pro card:** a dark opaque card (`zinc-950`, `zinc-900` in dark theme) with a white 10% ring.
+  No violet gradient, edge or glow (owner request, 2026-10-31).
+- **Plan alignment:** the description reserves the same height on both cards, so prices, CTAs and
+  the feature label line up side by side.
+- **Recommended badge:** the default `Badge`, on Pro only. Never "Most popular".
+- **Comparison table:** shadcn `Table` grouped by feature group. An outer focusable region scrolls
+  on small screens and the first column is sticky. Excluded is a minus icon with screen-reader
+  text; future features use an outline "Coming later" badge. Tooltip text also appears as plain
+  text below the table on small screens, where hover is not available.
 
 ## 9. Accessibility checklist
 

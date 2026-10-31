@@ -5,23 +5,24 @@ navigation is designed with room for them.
 
 ## 1. Route map
 
-| Route                                                                   | Group    | Access      | Screen                    |
-| ----------------------------------------------------------------------- | -------- | ----------- | ------------------------- |
-| `/`                                                                     | `(root)` | Public      | Landing page              |
-| `/login`                                                                | `(auth)` | Guests only | Log in                    |
-| `/signup`                                                               | `(auth)` | Guests only | Sign up                   |
-| `/forgot-password`                                                      | `(auth)` | Guests only | Request reset email       |
-| `/reset-password?token=…`                                               | `(auth)` | Guests only | Set new password          |
-| `/dashboard`                                                            | `(app)`  | Signed in   | Dashboard                 |
-| `/workspaces`                                                           | `(app)`  | Signed in   | Workspace list            |
-| `/workspaces/[workspaceId]`                                             | `(app)`  | Signed in   | Workspace (projects list) |
-| `/workspaces/[workspaceId]/settings`                                    | `(app)`  | Signed in   | Workspace settings        |
-| `/workspaces/[workspaceId]/projects/[projectId]`                        | `(app)`  | Signed in   | Project (documents list)  |
-| `/workspaces/[workspaceId]/projects/[projectId]/documents/[documentId]` | `(app)`  | Signed in   | Document view/edit        |
-| `/settings/profile`                                                     | `(app)`  | Signed in   | Profile                   |
-| `/settings/security`                                                    | `(app)`  | Signed in   | Password, sessions        |
-| `/settings/account`                                                     | `(app)`  | Signed in   | Delete account            |
-| `not-found` / `error`                                                   | all      | —           | 404 and error boundaries  |
+| Route                                                                   | Group    | Access      | Screen                         |
+| ----------------------------------------------------------------------- | -------- | ----------- | ------------------------------ |
+| `/`                                                                     | `(root)` | Public      | Landing page                   |
+| `/pricing`                                                              | `(root)` | Public      | Plans, comparison, pricing FAQ |
+| `/login`                                                                | `(auth)` | Guests only | Log in                         |
+| `/signup`                                                               | `(auth)` | Guests only | Sign up                        |
+| `/forgot-password`                                                      | `(auth)` | Guests only | Request reset email            |
+| `/reset-password?token=…`                                               | `(auth)` | Guests only | Set new password               |
+| `/dashboard`                                                            | `(app)`  | Signed in   | Dashboard                      |
+| `/workspaces`                                                           | `(app)`  | Signed in   | Workspace list                 |
+| `/workspaces/[workspaceId]`                                             | `(app)`  | Signed in   | Workspace (projects list)      |
+| `/workspaces/[workspaceId]/settings`                                    | `(app)`  | Signed in   | Workspace settings             |
+| `/workspaces/[workspaceId]/projects/[projectId]`                        | `(app)`  | Signed in   | Project (documents list)       |
+| `/workspaces/[workspaceId]/projects/[projectId]/documents/[documentId]` | `(app)`  | Signed in   | Document view/edit             |
+| `/settings/profile`                                                     | `(app)`  | Signed in   | Profile                        |
+| `/settings/security`                                                    | `(app)`  | Signed in   | Password, sessions             |
+| `/settings/account`                                                     | `(app)`  | Signed in   | Delete account                 |
+| `not-found` / `error`                                                   | all      | —           | 404 and error boundaries       |
 
 Guests hitting an `(app)` route go to `/login?next=<path>`. Signed-in users hitting an `(auth)`
 route go to `/dashboard`.
@@ -30,7 +31,7 @@ route go to `/dashboard`.
 
 | Layout            | Used by  | Contents                                                                                                 |
 | ----------------- | -------- | -------------------------------------------------------------------------------------------------------- |
-| `MarketingLayout` | `(root)` | Translucent top nav (logo, GitHub, Log in, Get started), footer                                          |
+| `MarketingLayout` | `(root)` | Translucent top nav (logo, Features, How it works, Pricing, FAQ, GitHub, Log in, Get started), footer    |
 | `AuthLayout`      | `(auth)` | Centered card, logo, theme toggle; no app navigation                                                     |
 | `AppShell`        | `(app)`  | Sidebar (workspaces, settings), top bar (breadcrumbs, search, user menu); collapses to a sheet on mobile |
 
@@ -79,6 +80,15 @@ Workspace ─► Settings ─► rename / update description
                   ─► revoke one session / revoke all other sessions
 ```
 
+### J6. Compare plans
+
+```
+Landing ─► "Pricing" (in-page anchor) ─► "Compare all features" ─► /pricing
+Any other marketing page ─► "Pricing" ─► /pricing
+```
+
+Plan CTAs read "Coming soon" and are disabled until billing is live.
+
 ## 4. Screen states
 
 Every data-driven screen must design all of these:
@@ -107,3 +117,4 @@ Every data-driven screen must design all of these:
 | 3     | Search results page with filters and source snippets                    |
 | 4     | AI conversation panel with streaming answers and citations              |
 | 5+    | Reports, agent runs, notifications inbox, members, billing and usage    |
+| Later | Billing (plan, usage meters, upgrade) and Settings → API keys           |

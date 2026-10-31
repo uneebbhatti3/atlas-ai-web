@@ -8,7 +8,6 @@ import { ChatBubble } from "./mocks/chat-bubble";
 import { CitationChip } from "./mocks/citation-chip";
 import { NotificationCard } from "./mocks/notification-card";
 import { ProductWindow } from "./product-window";
-import { StatusBadge } from "./status-badge";
 
 interface ConversationProps {
   demo: HeroDemoData;
@@ -17,13 +16,10 @@ interface ConversationProps {
 function Conversation({ demo }: ConversationProps) {
   return (
     <div className="flex min-h-96 flex-col gap-4 p-5 text-left md:p-6">
-      <div className="flex items-center justify-between gap-3">
-        <p className="flex items-center gap-2 text-sm font-semibold">
-          <SparklesIcon className="size-4" strokeWidth={1.75} />
-          Ask Atlas
-        </p>
-        <StatusBadge status={demo.status} />
-      </div>
+      <p className="flex items-center gap-2 text-sm font-semibold">
+        <SparklesIcon className="size-4" strokeWidth={1.75} />
+        Ask Atlas
+      </p>
       <p className="text-center text-xs text-muted-foreground">Today at 9:41 AM</p>
       <ChatBubble from="user">{demo.question}</ChatBubble>
       <ChatBubble from="atlas">

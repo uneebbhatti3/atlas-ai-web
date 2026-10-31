@@ -10,5 +10,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: new URL("/pricing", env.NEXT_PUBLIC_APP_URL).toString(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }

@@ -51,7 +51,7 @@ export const howItWorksSteps: HowItWorksStep[] = [
   },
   {
     title: "Add documents",
-    description: "Write Markdown notes today. File uploads arrive with document processing.",
+    description: "Write your notes in Markdown, right inside a project.",
   },
   {
     title: "Atlas indexes them",

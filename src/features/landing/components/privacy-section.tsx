@@ -1,10 +1,10 @@
+import { CheckItem } from "@/components/common/check-item";
+import { Reveal } from "@/components/common/reveal";
+import { SectionHeading } from "@/components/common/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
 
 import { privacyIntro, privacyNotification, privacyPoints } from "../data/how-it-works";
-import { CheckItem } from "./check-item";
 import { NotificationCard } from "./mocks/notification-card";
-import { Reveal } from "./reveal";
-import { SectionHeading } from "./section-heading";
 
 export function PrivacySection() {
   return (

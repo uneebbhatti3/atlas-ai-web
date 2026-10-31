@@ -1,10 +1,11 @@
 import { Fragment } from "react";
 
+import { Reveal } from "@/components/common/reveal";
+import { SectionHeading } from "@/components/common/section-heading";
+
 import { howItWorksChat, howItWorksIntro, howItWorksSteps } from "../data/how-it-works";
 import { ChatBubble } from "./mocks/chat-bubble";
 import { CitationChip } from "./mocks/citation-chip";
-import { Reveal } from "./reveal";
-import { SectionHeading } from "./section-heading";
 
 export function HowItWorksSection() {
   return (
@@ -77,7 +78,7 @@ export function HowItWorksSection() {
               ))}
             </div>
             <figcaption className="text-center text-sm text-muted-foreground">
-              Concept: how a cited answer will look.
+              Example: how a cited answer looks.
             </figcaption>
           </figure>
         </Reveal>

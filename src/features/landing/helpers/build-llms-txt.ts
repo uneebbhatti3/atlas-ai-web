@@ -21,7 +21,8 @@ ${siteConfig.tagline} Built by ${author.name}.
 
 ## Links
 
-- [Website](${siteUrl}): Landing page with features, roadmap and FAQ
+- [Website](${siteUrl}): Landing page with features and FAQ
+- [Pricing](${new URL("/pricing", env.NEXT_PUBLIC_APP_URL).toString()}): Free and Pro plans, compared
 - [Source code](${siteConfig.repositoryUrl}): The frontend repository
 - [Decision records](${siteConfig.decisionRecordsUrl}): Architecture decisions and their reasoning
 

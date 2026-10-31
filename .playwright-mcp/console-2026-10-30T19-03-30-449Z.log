@@ -1,0 +1,33 @@
+[     631ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3111/_vercel/speed-insights/script.js:0
+[     650ms] [LOG] [Vercel Speed Insights] Failed to load script from /_vercel/speed-insights/script.js. Please check if any content blockers are enabled and try again. @ http://localhost:3111/_next/static/chunks/0d1p-9nd7qfco.js:0
+[   38720ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   39038ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   39398ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   39807ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   40275ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   40790ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   41354ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   41969ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   42627ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   43346ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   44114ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   44923ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   45782ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   46687ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   47640ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   48657ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   49726ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   50839ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   51996ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   53204ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   54462ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   55774ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   57136ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   58543ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   60001ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   61509ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   63069ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   64678ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   66331ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   68035ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0
+[   69796ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3111/atlas-ai-promo.mp4:0

@@ -1,0 +1,2 @@
+[    2220ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3117/_vercel/speed-insights/script.js:0
+[    2499ms] [LOG] [Vercel Speed Insights] Failed to load script from /_vercel/speed-insights/script.js. Please check if any content blockers are enabled and try again. @ http://localhost:3117/_next/static/chunks/0d1p-9nd7qfco.js:0
